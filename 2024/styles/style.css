@@ -82,7 +82,7 @@ footer {
   color: white;
   text-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.6);
   min-height: 100vh;
-  font-size: 4.5rem;
+  font-size: 5rem;
   text-transform: uppercase;
 
   display: flex;
@@ -464,11 +464,11 @@ section.destination.berlin .header {
   }
 
   .banner {
-    font-size: 3rem !important;
+    font-size: 3rem;
   }
 
   .header {
-    font-size: 1.5rem !important;
+    font-size: 1.5rem;
   }
 
   .airbnb-card .img-container {
