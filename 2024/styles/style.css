@@ -446,7 +446,7 @@ section.destination.berlin .header {
 
 .footer-content {
   background-color: var(--mean-color-berlin-card);
-  color: white;
+  color: rgb(0, 0, 0);
   text-align: center;
   padding: 5px 0;
   font-size: 11px;
@@ -461,6 +461,14 @@ section.destination.berlin .header {
 @media only screen and (max-width: 830px) {
   .airbnb-card {
     flex-direction: column;
+  }
+
+  .banner {
+    font-size: 3rem !important;
+  }
+
+  .header {
+    font-size: 1.5rem !important;
   }
 
   .airbnb-card .img-container {
