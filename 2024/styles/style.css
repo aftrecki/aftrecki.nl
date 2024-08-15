@@ -66,7 +66,7 @@ section.destination {
 }
 
 section.destination p {
-  max-width: 600px;
+  max-width: 800px;
 }
 
 footer {
@@ -142,6 +142,7 @@ section.destination .banner {
 
 .subsection.description {
   font-family: "Red Hat Display";
+  text-align: justify;
 }
 
 .header {
@@ -435,6 +436,10 @@ section.destination.berlin .header {
 
 .event-description {
   font-size: 16px;
+}
+
+.unconfirmed {
+  opacity: 0.5;
 }
 
 .event-link {
