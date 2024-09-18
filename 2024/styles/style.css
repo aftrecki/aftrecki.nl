@@ -159,11 +159,11 @@ section.destination.berlin .header {
   font-family: "Bebas Neue", sans-serif;
 }
 
-/* Location */
-
-.location {
+.location, .scheduling {
   padding-bottom: var(--divider-padding);
 }
+
+/* Location */
 
 .airbnb-card {
   box-sizing: border-box;
@@ -316,6 +316,9 @@ section.destination.berlin .header {
 .event {
   padding-bottom: 8px;
   color: white;
+  
+  padding-top: 8px;
+  border-bottom: 1px solid white;
 }
 
 .event > a:link,
@@ -326,10 +329,6 @@ section.destination.berlin .header {
   text-decoration: none;
 }
 
-.event {
-  padding-top: 8px;
-  border-bottom: 1px solid white;
-}
 
 .event:last-child {
   border-bottom: none;
