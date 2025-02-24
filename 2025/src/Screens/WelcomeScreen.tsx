@@ -1,4 +1,6 @@
+import { FunctionComponent } from 'react';
 
-const WelcomeScreen: FS = () => {
 
+export const WelcomeScreen: FunctionComponent = () => {
+    return <div>Hello oh hello</div>
 }
