@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build && cp -r out ../docs && cp ../CNAME ../docs",
+    "build": "next build && cp -a out/. ../docs/ && cp ../CNAME ../docs",
     "start": "next start",
     "lint": "next lint"
   },
