@@ -1,6 +1,7 @@
 import Image from "next/image";
 import {FunctionComponent} from "react";
 import {CountDownTimer} from "@/app/2025/CountDownTimer";
+import moment from "moment";
 
 const Page: FunctionComponent = () => {
     return <div style={{display: 'grid', justifyContent: 'center', height: "100vh", overflow: "scroll"}}>
@@ -12,7 +13,7 @@ const Page: FunctionComponent = () => {
             objectFit={'cover'}
         />
         <div style={{zIndex: 10, height: "100vh", fontSize: "30px", fontWeight: "bold", alignContent: "center"}}>
-            <CountDownTimer timeToCountdown={new Date("2025-09-20")}/>
+            <CountDownTimer timeToCountdown={moment("2025-09-20")}/>
         </div>
     </div>
 }
