@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
                 destination: "/2022/index.html",
             },
             {
-                source: "/",
+                source: "/2024",
                 destination: "/2024/index.html",
             },
         ];

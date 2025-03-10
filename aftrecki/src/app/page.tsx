@@ -1,7 +1,13 @@
-import { redirect } from 'next/navigation'
+'use client'
+
+import {useEffect} from "react";
+import {redirect} from "next/navigation";
 
 export default function Home() {
-  redirect('/2024')
+
+  useEffect(() => {
+    redirect("/2025");
+  })
 
   return (
       <></>
