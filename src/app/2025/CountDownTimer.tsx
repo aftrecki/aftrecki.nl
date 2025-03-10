@@ -21,7 +21,8 @@ export const CountDownTimer: FunctionComponent<Props> = ({
     };
   }, []);
 
-  const duration = moment.duration(timeToCountdown.diff(now));
+  const diff = timeToCountdown.diff(now);
+  const duration = moment.duration(diff);
 
   return (
     <div
