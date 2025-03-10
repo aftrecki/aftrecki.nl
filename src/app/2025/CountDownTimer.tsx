@@ -1,3 +1,4 @@
+"use client";
 import { FunctionComponent, useEffect, useState } from "react";
 import moment, { Moment } from "moment";
 
