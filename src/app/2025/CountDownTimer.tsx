@@ -34,55 +34,70 @@ export const CountDownTimer: FunctionComponent<Props> = ({
         color: "white",
       }}
     >
-      <NumberOfCounter numberToShow={duration.months()} />
-      <NumberOfCounter numberToShow={duration.days()} />
-      <NumberOfCounter numberToShow={duration.hours()} />
-      <NumberOfCounter numberToShow={duration.minutes()} />
-      <NumberOfCounter numberToShow={duration.seconds()} />
+      <NumberOfCounter title={"maanden"} numberToShow={duration.months()} />
+      <NumberOfCounter title={"dagen"} numberToShow={duration.days()} />
+      <NumberOfCounter title={"uren"} numberToShow={duration.hours()} />
+      <NumberOfCounter title={"minuten"} numberToShow={duration.minutes()} />
+      <NumberOfCounter title={"seconde"} numberToShow={duration.seconds()} />
     </div>
   );
 };
 
-export const NumberOfCounter: FunctionComponent<{ numberToShow: number }> = ({
-  numberToShow,
-}) => {
-  const [numberArray, setNumberArray] = useState<string[]>([]);
+export const NumberOfCounter: FunctionComponent<{ numberToShow: number, title: string }> = ({numberToShow, title}) => {
 
-  useEffect(() => {
-    setNumberArray(numberToShow.toString(10).split(""));
-  }, [numberToShow]);
+    const [numberArray, setNumberArray] = useState<string[]>([])
 
-  return numberArray.map((number) => {
-    return (
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr",
-          gridTemplateRows: "1fr 1fr",
-        }}
-      >
-        <div
-          style={{
-            gridColumn: "1 / 2",
-            gridRow: "1 /2",
-            borderBottom: "1px solid lightgrey",
-            height: "100%",
-            width: "100%",
-            zIndex: 2,
-          }}
-        />
-        <div
-          style={{
-            gridColumn: "1 / 2",
-            gridRow: "1 /3",
-            border: "1px solid lightgrey",
-            padding: "16px",
+    useEffect(() => {
+        setNumberArray(numberToShow.toString(10).padStart(2, "0").split(""))
+    }, [numberToShow]);
+
+    return <div style={{
+        display: "grid",
+        gridTemplateColumns: "auto",
+        gridTemplateRows: "auto auto",
+        gridGap: "8px",
+        justifyItems: "center"
+    }}>
+        {numberArray.map((number, index) => <div
+                style={{
+                    display: "grid",
+                    gridTemplateColumns: "1fr",
+                    gridTemplateRows: "1fr 1fr",
+                    gridColumn: `${index + 1} / ${index + 2}`
+                }}
+                key={`rotop met je key ${index}`}>
+
+                <div style={{
+                    gridColumn: "1 / 2",
+                    gridRow: "1 /2",
+                    borderBottom: "1px solid rgba(255, 255, 255, 0.5)",
+                    height: "100%",
+                    width: "100%",
+                    zIndex: 2
+                }}/>
+
+                <div style={{
+                    gridColumn: "1 / 2",
+                    gridRow: "1 / 3",
+                    border: "1px solid lightgrey",
+                    borderRadius: "4px",
+                    padding: "16px",
+                    backgroundColor: "rgba(00, 00, 00, 0.8)"
+                }}>{number}</div>
+            </div>
+        )}
+
+        <div style={{
+            display: "flex",
+            gridRow: "2 / 3",
+            gridColumn: "1 / end",
             backgroundColor: "rgba(00, 00, 00, 0.8)",
-          }}
-        >
-          {number}
-        </div>
-      </div>
-    );
-  });
-};
+            justifyContent: "center",
+            padding: "0px 8px",
+            border: "1px solid lightgrey",
+            fontSize: "20px",
+            borderRadius: "4px",
+            width: "100%"
+        }}>{title}</div>
+    </div>
+}

@@ -5,7 +5,7 @@ import { CountDownTimer } from "@/app/2025/CountDownTimer";
 import moment from "moment";
 
 const Page: FunctionComponent = () => {
-  const timeToCountdown = moment("2025-09-20");
+  const timeToCountdown = moment("2025-09-20").add(1, 'hour');
 
   return (
     <div
