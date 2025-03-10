@@ -1,32 +1,27 @@
 name: Deploy Next.js site to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["2025-in-react"]
 
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Detect package manager
         id: detect-package-manager
         run: |
@@ -45,19 +40,20 @@ jobs:
             echo "Unable to determine package manager"
             exit 1
           fi
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
+        working-directory: aftrecki # <-- Add this line to set the working directory
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
-          # Automatically inject basePath in your Next.js configuration file and disable
-          # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
-          #
-          # You may remove this line if you want to manage the configuration yourself.
           static_site_generator: next
+        working-directory: aftrecki # <-- Add this line to set the working directory
+
       - name: Restore cache
         uses: actions/cache@v4
         with:
@@ -65,20 +61,26 @@ jobs:
           key: ${{ runner.os }}-nextjs-${{ hashFiles('aftrecki/**/package-lock.json', 'aftrecki/**/yarn.lock') }}-${{ hashFiles('aftrecki/**.[jt]s', 'aftrecki/**.[jt]sx') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('aftrecki/**/package-lock.json', 'aftrecki/**/yarn.lock') }}-
+        working-directory: aftrecki # <-- Add this line to set the working directory
+
       - name: Install dependencies
         run: |
           cd aftrecki
           ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+        working-directory: aftrecki # <-- Add this line to set the working directory
+
       - name: Build with Next.js
         run: |
           cd aftrecki
           ${{ steps.detect-package-manager.outputs.runner }} next build
+        working-directory: aftrecki # <-- Add this line to set the working directory
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: aftrecki/out
+        working-directory: aftrecki # <-- Add this line to set the working directory
 
-  # Deployment job
   deploy:
     environment:
       name: github-pages
@@ -89,3 +91,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        working-directory: aftrecki # <-- Add this line to set the working directory
