@@ -46,13 +46,16 @@ jobs:
         with:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
-        working-directory: aftrecki # <-- Add this line to set the working directory
+        run: |
+          cd aftrecki
+          npm install # or yarn install if using yarn
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
           static_site_generator: next
-        working-directory: aftrecki # <-- Add this line to set the working directory
+        run: |
+          cd aftrecki
 
       - name: Restore cache
         uses: actions/cache@v4
@@ -61,25 +64,23 @@ jobs:
           key: ${{ runner.os }}-nextjs-${{ hashFiles('aftrecki/**/package-lock.json', 'aftrecki/**/yarn.lock') }}-${{ hashFiles('aftrecki/**.[jt]s', 'aftrecki/**.[jt]sx') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('aftrecki/**/package-lock.json', 'aftrecki/**/yarn.lock') }}-
-        working-directory: aftrecki # <-- Add this line to set the working directory
+        run: |
+          cd aftrecki
 
       - name: Install dependencies
         run: |
           cd aftrecki
           ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-        working-directory: aftrecki # <-- Add this line to set the working directory
 
       - name: Build with Next.js
         run: |
           cd aftrecki
           ${{ steps.detect-package-manager.outputs.runner }} next build
-        working-directory: aftrecki # <-- Add this line to set the working directory
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: aftrecki/out
-        working-directory: aftrecki # <-- Add this line to set the working directory
 
   deploy:
     environment:
@@ -91,4 +92,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        working-directory: aftrecki # <-- Add this line to set the working directory
+        run: |
+          cd aftrecki
+          # Deploy logic here, if needed, for Pages
