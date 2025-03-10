@@ -1,6 +1,5 @@
 'use client';
 import {FunctionComponent, useEffect, useState} from "react";
-import {clearInterval} from "node:timers";
 import moment, {Moment} from "moment";
 
 type Props = {
