@@ -19,7 +19,7 @@ export const DayPlanningPanel: FunctionComponent<Props> = ({dateTitle, activitie
         borderRadius: "8px",
         boxShadow: "0px 0px 5px rgba(0,0,0,0.5)",
         minWidth: "225px",
-        maxWidth: "380px",
+        maxWidth: "340px",
     }
 
     return <div style={{
