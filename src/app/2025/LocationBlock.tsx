@@ -19,6 +19,7 @@ export const LocationBlock: FunctionComponent<PropsWithChildren<Props>> = ({
             setSmallscreen(window.innerWidth < widthBorder)
         });
 
+        setSmallscreen(window.innerWidth < widthBorder)
     })
 
     return (
