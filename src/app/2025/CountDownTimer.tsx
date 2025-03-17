@@ -1,46 +1,46 @@
 "use client";
-import { FunctionComponent, useEffect, useState } from "react";
-import moment, { Moment } from "moment";
+import {FunctionComponent, useEffect, useState} from "react";
+import moment, {Moment} from "moment";
 
 type Props = {
-  timeToCountdown: Moment;
+    timeToCountdown: Moment;
 };
 
 export const CountDownTimer: FunctionComponent<Props> = ({
-  timeToCountdown,
-}) => {
-  const [now, setNow] = useState<Moment>(moment());
+                                                             timeToCountdown,
+                                                         }) => {
+    const [now, setNow] = useState<Moment>(moment());
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setNow(moment());
-    }, 1000);
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setNow(moment());
+        }, 1000);
 
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
+        return () => {
+            clearInterval(timer);
+        };
+    }, []);
 
-  const diff = timeToCountdown.diff(now);
-  const duration = moment.duration(diff);
+    const diff = timeToCountdown.diff(now);
+    const duration = moment.duration(diff);
 
-  return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(5, 1fr)",
-        justifyItems: "center",
-        gridGap: "16px",
-        color: "white",
-      }}
-    >
-      <NumberOfCounter title={"maanden"} numberToShow={duration.months()} />
-      <NumberOfCounter title={"dagen"} numberToShow={duration.days()} />
-      <NumberOfCounter title={"uren"} numberToShow={duration.hours()} />
-      <NumberOfCounter title={"minuten"} numberToShow={duration.minutes()} />
-      <NumberOfCounter title={"seconde"} numberToShow={duration.seconds()} />
-    </div>
-  );
+    return (
+        <div
+            style={{
+                display: "flex",
+                justifyContent: "center",
+                flexWrap: "wrap",
+                gridGap: "16px",
+                color: "white",
+            }}
+        >
+            <NumberOfCounter title={"maanden"} numberToShow={duration.months()}/>
+            <NumberOfCounter title={"dagen"} numberToShow={duration.days()}/>
+            <NumberOfCounter title={"uren"} numberToShow={duration.hours()}/>
+            <NumberOfCounter title={"minuten"} numberToShow={duration.minutes()}/>
+            <NumberOfCounter title={"seconde"} numberToShow={duration.seconds()}/>
+        </div>
+    );
 };
 
 export const NumberOfCounter: FunctionComponent<{ numberToShow: number, title: string }> = ({numberToShow, title}) => {
