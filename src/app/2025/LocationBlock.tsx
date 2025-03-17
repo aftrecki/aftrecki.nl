@@ -12,7 +12,7 @@ export const LocationBlock: FunctionComponent<PropsWithChildren<Props>> = ({
                                                                            }: Props) => {
 
     const widthBorder = 700;
-    const [smallscreen, setSmallscreen] = useState<boolean>(window.innerWidth < widthBorder)
+    const [smallscreen, setSmallscreen] = useState<boolean>(false)
 
     useEffect(() => {
         window.addEventListener('resize', () => {
