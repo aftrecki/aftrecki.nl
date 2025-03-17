@@ -1,4 +1,4 @@
-import {FunctionComponent, PropsWithChildren} from "react";
+import {FunctionComponent, PropsWithChildren, useEffect, useState} from "react";
 import {ContentBlock} from "./ContentBlock";
 
 type Props = {
@@ -8,6 +8,17 @@ type Props = {
 export const LocationBlock: FunctionComponent<PropsWithChildren<Props>> = ({
                                                                                data,
                                                                            }: Props) => {
+
+    const widthBorder = 700;
+    const [smallscreen, setSmallscreen] = useState<boolean>(window.innerWidth < widthBorder)
+
+    useEffect(() => {
+        window.addEventListener('resize', () => {
+            setSmallscreen(window.innerWidth < widthBorder)
+        });
+
+    })
+
     return (
         <ContentBlock background>
             <div
@@ -19,6 +30,7 @@ export const LocationBlock: FunctionComponent<PropsWithChildren<Props>> = ({
                 <div
                     style={{
                         display: "flex",
+                        flexDirection: smallscreen ? "column" : "row",
                         backgroundColor: "white",
                         borderRadius: "8px",
                         color: "black",
@@ -27,7 +39,7 @@ export const LocationBlock: FunctionComponent<PropsWithChildren<Props>> = ({
                     }}
                 >
                     <img
-                        style={{width: "40%", objectFit: "cover", borderRadius: "8px"}}
+                        style={{width: smallscreen ? "100%" : "40%", objectFit: "cover", borderRadius: "8px"}}
                         src={data.thumbnail}
                         alt="Villa"
                     />
@@ -35,7 +47,7 @@ export const LocationBlock: FunctionComponent<PropsWithChildren<Props>> = ({
                     <div
                         style={{
                             display: "flex",
-                            width: "60%",
+                            width: smallscreen ? "100%" : "60%",
                             flexDirection: "column",
                             flex: 2,
                             alignItems: "center",
@@ -55,7 +67,7 @@ export const LocationBlock: FunctionComponent<PropsWithChildren<Props>> = ({
                         <p
                             style={{
                                 marginTop: "16px",
-                                paddingLeft: "16px",
+                                paddingLeft: smallscreen ? 0 : "16px",
                             }}
                         >
                             {data.description}
