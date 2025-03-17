@@ -1,3 +1,5 @@
+"use client";
+
 import {FunctionComponent, PropsWithChildren, useEffect, useState} from "react";
 import {ContentBlock} from "./ContentBlock";
 
