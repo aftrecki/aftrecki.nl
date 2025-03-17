@@ -15,7 +15,7 @@ export const ContentBlock: FunctionComponent<PropsWithChildren<Props>> = ({child
             fontWeight: "500",
             padding: "48px 24px",
             marginBottom: "48px",
-            backgroundColor: background ? "rgb(64,118,166, 0.8)" : "transparent",
+            backgroundColor: background ? "rgb(64,118,166, 0.95)" : "transparent",
             boxShadow: background ? "0px 0px 15px rgba(0,0,0,0.5)" : undefined,
             ...style
         }}>
