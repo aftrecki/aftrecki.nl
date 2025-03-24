@@ -25,7 +25,7 @@ export const CountDownTimer: FunctionComponent<Props> = ({
   const duration = moment.duration(diff);
 
   return (
-    <div className="flex justify-center flex-wrap gap-4 text-white">
+    <div className="flex justify-center flex-wrap gap-4 text-white text-3xl">
       <NumberOfCounter title={"maanden"} numberToShow={duration.months()} />
       <NumberOfCounter title={"dagen"} numberToShow={duration.days()} />
       <NumberOfCounter title={"uren"} numberToShow={duration.hours()} />
