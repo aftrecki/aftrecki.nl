@@ -14,15 +14,7 @@ const Page: FunctionComponent = () => {
   const timeToCountdown = moment("2025-09-20T00:00:00+01:00");
 
   return (
-    <div
-      style={{
-        display: "grid",
-        justifyContent: "center",
-        height: "100vh",
-        overflow: "scroll",
-        scrollbarWidth: "none",
-      }}
-    >
+    <div className="grid justify-center h-screen overflow-scroll scrollbar-none">
       <Image
         src={"/2025/hetMeerInDeBuurt.jpg"}
         alt="HetHuis"
@@ -30,26 +22,8 @@ const Page: FunctionComponent = () => {
         objectFit={"cover"}
       />
 
-      <div
-        style={{
-          zIndex: 10,
-          height: "100vh",
-          fontSize: "30px",
-          fontWeight: "bold",
-          alignContent: "center",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontFamily: "EB Garamond",
-            fontSize: "5rem",
-            color: "white",
-            textTransform: "uppercase",
-          }}
-        >
+      <div className="flex flex-col justify-center z-10 h-screen text-5xl font-bold">
+        <div className="flex items-center justify-center font-[EB-Garamond] text-5xl text-white uppercase mb-4">
           <strong>Vosges</strong>
         </div>
 
@@ -73,12 +47,7 @@ const Page: FunctionComponent = () => {
 
       <ContentBlock
         background={false}
-        style={{
-          display: "flex",
-          rowGap: "16px",
-          flexWrap: "wrap",
-          justifyContent: "center",
-        }}
+        className="flex row-gap-16 justify-center"
       >
         <DayPlanningPanel
           dateTitle="20 september"

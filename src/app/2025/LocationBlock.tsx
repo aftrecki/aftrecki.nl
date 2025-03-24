@@ -1,141 +1,74 @@
 "use client";
 
-import {FunctionComponent, PropsWithChildren, useEffect, useState} from "react";
-import {ContentBlock} from "./ContentBlock";
+import {
+  FunctionComponent,
+  PropsWithChildren,
+  useEffect,
+  useState,
+} from "react";
+import { ContentBlock } from "./ContentBlock";
 
 type Props = {
-    data: LocationData;
+  data: LocationData;
 };
 
 export const LocationBlock: FunctionComponent<PropsWithChildren<Props>> = ({
-                                                                               data,
-                                                                           }: Props) => {
+  data,
+}: Props) => {
+  const widthBorder = 700;
+  const [smallscreen, setSmallscreen] = useState<boolean>(false);
 
-    const widthBorder = 700;
-    const [smallscreen, setSmallscreen] = useState<boolean>(false)
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setSmallscreen(window.innerWidth < widthBorder);
+    });
 
-    useEffect(() => {
-        window.addEventListener('resize', () => {
-            setSmallscreen(window.innerWidth < widthBorder)
-        });
+    setSmallscreen(window.innerWidth < widthBorder);
+  });
 
-        setSmallscreen(window.innerWidth < widthBorder)
-    })
+  return (
+    <ContentBlock background>
+      <div className="flex justify-center">
+        <div className="flex flex-col md:flex-row bg-white rounded-lg text-black p-6 md:p-12 max-w-4xl">
+          <img
+            className="w-full md:w-2/5 rounded-lg object-cover"
+            src={data.thumbnail}
+            alt="Villa"
+          />
 
-    return (
-        <ContentBlock background>
-            <div
-                style={{
-                    display: "flex",
-                    justifyContent: "center",
-                }}
-            >
-                <div
-                    style={{
-                        display: "flex",
-                        flexDirection: smallscreen ? "column" : "row",
-                        backgroundColor: "white",
-                        borderRadius: "8px",
-                        color: "black",
-                        padding: "24px",
-                        maxWidth: "700px"
-                    }}
-                >
-                    <img
-                        style={{width: smallscreen ? "100%" : "40%", objectFit: "cover", borderRadius: "8px"}}
-                        src={data.thumbnail}
-                        alt="Villa"
-                    />
+          <div className="w-full flex-2 flex-col items-center  md:w-2/5 p-6 ">
+            <h2 className="w-full text-2xl font-bold text-center">
+              {data.title}
+            </h2>
 
-                    <div
-                        style={{
-                            display: "flex",
-                            width: smallscreen ? "100%" : "60%",
-                            flexDirection: "column",
-                            flex: 2,
-                            alignItems: "center",
-                            padding: "0 16px",
-                        }}
-                    >
-                        <h2
-                            style={{
-                                width: "100%",
-                                fontSize: "22px",
-                                fontWeight: "bold",
-                            }}
-                        >
-                            {data.title}
-                        </h2>
+            <p className="mt-4 md:mt-6 pl-0 md:pl-4">{data.description}</p>
 
-                        <p
-                            style={{
-                                marginTop: "16px",
-                                paddingLeft: smallscreen ? 0 : "16px",
-                            }}
-                        >
-                            {data.description}
-                        </p>
+            <ul className="w-full list-disc pl-8 mt-4 md:mt-6 mb-2 md:mb-4">
+              {data.utilities.map((utility, index) => (
+                <li key={index}>{utility}</li>
+              ))}
+            </ul>
 
-                        <ul
-                            style={{
-                                width: "100%",
-                                listStyleType: "initial",
-                                paddingLeft: "32px",
-                                marginTop: "16px",
-                                marginBottom: "8px",
-                            }}
-                        >
-                            {data.utilities.map((utility, index) => (
-                                <li key={index}>{utility}</li>
-                            ))}
-                        </ul>
+            <div className="w-full flex flex-col md:flex-row justify-center items-center gap-4 mt-4">
+              <a
+                className="flex w-full md:flex-1 justify-center items-center bg-sky-600/95 rounded-lg font-bold text-white p-2 md:p-4"
+                href={data.advertisementUrl}
+                target="_blank"
+              >
+                Advertentie
+              </a>
 
-                        <div
-                            style={{
-                                width: "100%",
-                                display: "flex",
-                                gap: "8px",
-                                marginTop: "8px",
-                            }}
-                        >
-                            <a
-                                style={{
-                                    display: "flex",
-                                    flex: 1,
-                                    justifyContent: "center",
-                                    alignItems: "center",
-                                    backgroundColor: "rgb(64,118,166)",
-                                    borderRadius: "8px",
-                                    fontWeight: "bold",
-                                    color: "white",
-                                    padding: "8px 16px",
-                                }}
-                                href={data.advertisementUrl}
-                                target="_blank"
-                            >
-                                Advertentie
-                            </a>
-                            <a
-                                style={{
-                                    display: "flex",
-                                    flex: 1,
-                                    justifyContent: "center",
-                                    alignItems: "center",
-                                    backgroundColor: "rgb(64,118,166)",
-                                    borderRadius: "8px",
-                                    fontWeight: "bold",
-                                    color: "white",
-                                    padding: "8px 16px",
-                                }}
-                                href={data.locationUrl}
-                                target="_blank"
-                            >
-                                Maps
-                            </a>
-                        </div>
-                    </div>
-                </div>
+              <a
+                className="flex w-full md:flex-1 justify-center items-center bg-sky-600/95 rounded-lg font-bold text-white p-2 md:p-4"
+                href={data.locationUrl}
+                target="_blank"
+              >
+                Maps
+              </a>
             </div>
-        </ContentBlock>
-    );
+          </div>
+        </div>
+      </div>
+    </ContentBlock>
+  );
 };

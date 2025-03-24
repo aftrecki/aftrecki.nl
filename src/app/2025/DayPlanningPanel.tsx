@@ -1,76 +1,49 @@
-import {CSSProperties, FunctionComponent, ReactElement} from "react";
+import { CSSProperties, FunctionComponent, ReactElement } from "react";
 
-export type DayActivity =  {
-        icon: ReactElement;
-        timeTitle: string;
-        description: string;
+export type DayActivity = {
+  icon: ReactElement;
+  timeTitle: string;
+  description: string;
 };
 
 type Props = {
-    dateTitle: string;
-    activities: DayActivity[];
-}
+  dateTitle: string;
+  activities: DayActivity[];
+};
 
-export const DayPlanningPanel: FunctionComponent<Props> = ({dateTitle, activities}) => {
-    const eenBoxie: CSSProperties = {
-        display: "flex",
-        backgroundColor: "rgb(64,118,166, 0.95)",
-        padding: "16px",
-        borderRadius: "8px",
-        boxShadow: "0px 0px 5px rgba(0,0,0,0.5)",
-        minWidth: "225px",
-        maxWidth: "340px",
-    }
+export const DayPlanningPanel: FunctionComponent<Props> = ({
+  dateTitle,
+  activities,
+}) => {
+  const eenBoxie =
+    "flex bg-sky-600/95 p-4 rounded-md shadow-md min-w-[225px] max-w-[340px]";
 
-    return <div style={{
-        display: "grid",
-        gridTemplateRows: "auto 1fr",
-        padding: "8px",
-    }}>
-        <div style={{
-            ...eenBoxie,
-            fontWeight: "bold",
-            justifyContent: "center",
-            letterSpacing: "1px",
-            marginBottom: "8px",
-        }}>
-            {dateTitle.toUpperCase()}
-        </div>
-        <div style={{
-            ...eenBoxie,
-            flexDirection: "column",
-            // justifyContent: "center",
-            alignItems: "stretch"
-        }}>
-            {activities.map((activity, index) => {
-                return <div style={{
-                    display: "flex",
-                    borderBottom: index !== activities.length - 1 ? "1px solid white" : undefined,
-                    marginBottom: index !== activities.length - 1 ? "8px" : undefined,
-                }}>
-                    <div style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        paddingBottom: "4px",
-                    }}>
-                        {activity.icon}
-                    </div>
-                    <div style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        fontWeight: "normal",
-                        paddingLeft: "4px"
-                    }}>
-                        <div style={{
-                            fontWeight: "bold"
-                        }}>
-                            {activity.timeTitle}
-                        </div>
+  return (
+    <div className="flex flex-col md:grid md:grid-rows-[auto,1fr] p-2">
+      <div
+        className={`${eenBoxie} font-bold justify-center tracking-wider mb-2`}
+      >
+        {dateTitle.toUpperCase()}
+      </div>
 
-                        {activity.description}
-                    </div>
-                </div>
-            })}
-        </div>
+      <div className={`${eenBoxie} flex-col`}>
+        {activities.map((activity) => {
+          return (
+            <div
+              className="flex border-b-2 last:border-0 border-white pt-2 pb-2"
+              key={activity.timeTitle}
+            >
+              <div className="flex justify-between pb-1">{activity.icon}</div>
+
+              <div className="flex flex-col font-normal pl-2">
+                <div className="font-bold">{activity.timeTitle}</div>
+
+                {activity.description}
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
-}
+  );
+};
