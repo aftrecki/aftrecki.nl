@@ -51,7 +51,7 @@ export const LocationBlock: FunctionComponent<PropsWithChildren<Props>> = ({
 
             <div className="w-full flex flex-col md:flex-row justify-center items-center gap-4 mt-4">
               <a
-                className="flex w-full md:flex-1 justify-center items-center bg-sky-600/95 rounded-lg font-bold text-white p-2 md:p-4"
+                className="flex w-full md:flex-1 justify-center items-center bg-bermuda rounded-lg font-bold text-white p-2 md:p-4"
                 href={data.advertisementUrl}
                 target="_blank"
               >
@@ -59,7 +59,7 @@ export const LocationBlock: FunctionComponent<PropsWithChildren<Props>> = ({
               </a>
 
               <a
-                className="flex w-full md:flex-1 justify-center items-center bg-sky-600/95 rounded-lg font-bold text-white p-2 md:p-4"
+                className="flex w-full md:flex-1 justify-center items-center bg-bermuda rounded-lg font-bold text-white p-2 md:p-4"
                 href={data.locationUrl}
                 target="_blank"
               >

@@ -16,10 +16,10 @@ export const DayPlanningPanel: FunctionComponent<Props> = ({
   activities,
 }) => {
   const eenBoxie =
-    "flex bg-sky-600/95 p-4 rounded-md shadow-md min-w-[225px] max-w-[340px]";
+    "flex bg-bermuda p-4 rounded-md shadow-md min-w-[225px] max-w-[340px]";
 
   return (
-    <div className="flex flex-col md:grid md:grid-rows-[auto,1fr] p-2">
+    <div className="grid grid-rows-[auto_1fr] p-2">
       <div
         className={`${eenBoxie} font-bold justify-center tracking-wider mb-2`}
       >
