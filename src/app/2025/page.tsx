@@ -22,7 +22,7 @@ const Page: FunctionComponent = () => {
         objectFit={"cover"}
       />
 
-      <div className="flex flex-col justify-center z-10 h-screen text-5xl font-bold">
+      <div className="flex flex-col justify-center z-10 h-screen font-bold">
         <div className="flex items-center justify-center font-[EB-Garamond] text-5xl text-white uppercase mb-4">
           <strong>Vosges</strong>
         </div>
