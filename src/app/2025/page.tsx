@@ -5,10 +5,10 @@ import { CountDownTimer } from "@/app/2025/CountDownTimer";
 import moment from "moment";
 import { ContentBlock } from "@/app/2025/ContentBlock";
 import { DayPlanningPanel } from "@/app/2025/DayPlanningPanel";
-import { AirlineStops, SportsBar } from "@mui/icons-material";
 import { LocationBlock } from "./LocationBlock";
 
 import locationData from "./data/location.json";
+import {AGENDA} from "@/app/2025/data/agenda";
 
 const Page: FunctionComponent = () => {
   const timeToCountdown = moment("2025-09-20T00:00:00+01:00");
@@ -47,84 +47,12 @@ const Page: FunctionComponent = () => {
 
       <ContentBlock
         background={false}
-        className="flex row-gap-16 justify-center"
+        className="flex flex-wrap row-gap-16 justify-center"
       >
-        <DayPlanningPanel
-          dateTitle="20 september"
-          activities={[
-            {
-              timeTitle: "08:00 - 11:00",
-              icon: <AirlineStops />,
-              description: "OchtendGym",
-            },
-            {
-              timeTitle: "Middag",
-              icon: <SportsBar />,
-              description:
-                "Portdag on the road. Een gezellig uitje waar de vraag is hoe je nou thuis bent gekomen.",
-            },
-          ]}
-        />
-        <DayPlanningPanel
-          dateTitle="21 september"
-          activities={[
-            {
-              timeTitle: "08:00 - 11:00",
-              icon: <AirlineStops />,
-              description: "OchtendGym",
-            },
-            {
-              timeTitle: "Middag",
-              icon: <SportsBar />,
-              description:
-                "Portdag on the road. Een gezellig uitje waar de vraag is hoe je nou thuis bent gekomen.",
-            },
-            {
-              timeTitle: "Middag",
-              icon: <SportsBar />,
-              description:
-                "Portdag on the road. Een gezellig uitje waar de vraag is hoe je nou thuis bent gekomen.",
-            },
-            {
-              timeTitle: "Middag",
-              icon: <SportsBar />,
-              description:
-                "Portdag on the road. Een gezellig uitje waar de vraag is hoe je nou thuis bent gekomen.",
-            },
-          ]}
-        />
-        <DayPlanningPanel
-          dateTitle="20 september"
-          activities={[
-            {
-              timeTitle: "08:00 - 11:00",
-              icon: <AirlineStops />,
-              description: "OchtendGym",
-            },
-            {
-              timeTitle: "Middag",
-              icon: <SportsBar />,
-              description:
-                "Portdag on the road. Een gezellig uitje waar de vraag is hoe je nou thuis bent gekomen.",
-            },
-          ]}
-        />
-        <DayPlanningPanel
-          dateTitle="20 september"
-          activities={[
-            {
-              timeTitle: "08:00 - 11:00",
-              icon: <AirlineStops />,
-              description: "OchtendGym",
-            },
-            {
-              timeTitle: "Middag",
-              icon: <SportsBar />,
-              description:
-                "Portdag on the road. Een gezellig uitje waar de vraag is hoe je nou thuis bent gekomen.",
-            },
-          ]}
-        />
+          {AGENDA.map(dayWithActivities => <DayPlanningPanel
+              dateTitle={dayWithActivities.title}
+              activities={dayWithActivities.events}
+          />)}
       </ContentBlock>
     </div>
   );

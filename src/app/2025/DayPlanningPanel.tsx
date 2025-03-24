@@ -1,10 +1,5 @@
-import { CSSProperties, FunctionComponent, ReactElement } from "react";
-
-export type DayActivity = {
-  icon: ReactElement;
-  timeTitle: string;
-  description: string;
-};
+import {FunctionComponent } from "react";
+import {DayActivity} from "@/app/2025/data/agenda";
 
 type Props = {
   dateTitle: string;
