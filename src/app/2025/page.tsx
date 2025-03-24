@@ -14,7 +14,7 @@ const Page: FunctionComponent = () => {
   const timeToCountdown = moment("2025-09-20T00:00:00+01:00");
 
   return (
-    <div className="grid justify-center h-screen overflow-scroll scrollbar-none">
+    <div className="grid justify-center h-screen overflow-scroll" style={{scrollbarWidth: "none"}}>
       <Image
         src={"/2025/hetMeerInDeBuurt.jpg"}
         alt="HetHuis"
@@ -47,9 +47,10 @@ const Page: FunctionComponent = () => {
 
       <ContentBlock
         background={false}
-        className="flex flex-wrap row-gap-16 justify-center"
+        className="flex flex-wrap gap-y-16 justify-center"
       >
-          {AGENDA.map(dayWithActivities => <DayPlanningPanel
+          {AGENDA.map((dayWithActivities, index) => <DayPlanningPanel
+              key={index + "-" + dayWithActivities.title}
               dateTitle={dayWithActivities.title}
               activities={dayWithActivities.events}
           />)}
