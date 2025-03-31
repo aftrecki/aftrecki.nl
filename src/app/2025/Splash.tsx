@@ -36,7 +36,7 @@ export const Splash: FunctionComponent = () => {
         setFadeOut(true);
       }}
     >
-      <source src="2025/splash.webm" type="video/webm" />
+      <source src="2025/splash_compressed.mp4" type="video/mp4" />
       <source src="2025/splash.mp4" type="video/mp4" />
       Video not supported
     </video>
