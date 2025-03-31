@@ -46,10 +46,7 @@ const Page: FunctionComponent = () => {
         schimmelige, oude kelder van het hostel.
       </ContentBlock>
       <LocationBlock data={locationData as LocationData} />
-      <ContentBlock
-        background={false}
-        className="flex flex-wrap gap-y-16 justify-center"
-      >
+      <div className="flex flex-wrap row-gap-16 justify-center w-screen z-10 text-white font-semibold">
         {AGENDA.map((dayWithActivities) => (
           <DayPlanningPanel
             key={dayWithActivities.title}
@@ -57,7 +54,7 @@ const Page: FunctionComponent = () => {
             activities={dayWithActivities.events}
           />
         ))}
-      </ContentBlock>
+      </div>
     </div>
   );
 };

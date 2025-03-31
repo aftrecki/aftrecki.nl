@@ -1,5 +1,12 @@
-import {AirlineStops, SportsBar, Hiking, CleaningServices, FreeBreakfast} from "@mui/icons-material";
-import {ReactElement} from "react";
+import {
+  AirlineStops,
+  SportsBar,
+  Hiking,
+  CleaningServices,
+  FreeBreakfast,
+  Restaurant,
+} from "@mui/icons-material";
+import { ReactElement } from "react";
 
 export type DayActivity = {
   icon: ReactElement;
@@ -7,7 +14,7 @@ export type DayActivity = {
   description: string;
 };
 
-export const AGENDA: {title: string, events: DayActivity[]}[] = [
+export const AGENDA: { title: string; events: DayActivity[] }[] = [
   {
     title: "20 September",
     events: [
@@ -15,8 +22,8 @@ export const AGENDA: {title: string, events: DayActivity[]}[] = [
         timeTitle: "Avond",
         icon: <AirlineStops />,
         description: "Aankomst",
-      }
-    ]
+      },
+    ],
   },
   {
     title: "21 September",
@@ -35,8 +42,8 @@ export const AGENDA: {title: string, events: DayActivity[]}[] = [
         timeTitle: "Avond",
         icon: <SportsBar />,
         description: "Avond activiteit",
-      }
-    ]
+      },
+    ],
   },
   {
     title: "22 September",
@@ -55,8 +62,8 @@ export const AGENDA: {title: string, events: DayActivity[]}[] = [
         timeTitle: "Avond",
         icon: <SportsBar />,
         description: "Avond activiteit",
-      }
-    ]
+      },
+    ],
   },
   {
     title: "23 September",
@@ -75,8 +82,8 @@ export const AGENDA: {title: string, events: DayActivity[]}[] = [
         timeTitle: "Avond",
         icon: <SportsBar />,
         description: "Avond activiteit",
-      }
-    ]
+      },
+    ],
   },
   {
     title: "24 September",
@@ -95,8 +102,8 @@ export const AGENDA: {title: string, events: DayActivity[]}[] = [
         timeTitle: "Avond",
         icon: <SportsBar />,
         description: "Avond activiteit",
-      }
-    ]
+      },
+    ],
   },
   {
     title: "25 September",
@@ -115,8 +122,8 @@ export const AGENDA: {title: string, events: DayActivity[]}[] = [
         timeTitle: "Avond",
         icon: <SportsBar />,
         description: "Avond activiteit",
-      }
-    ]
+      },
+    ],
   },
   {
     title: "26 September",
@@ -133,10 +140,10 @@ export const AGENDA: {title: string, events: DayActivity[]}[] = [
       },
       {
         timeTitle: "Avond",
-        icon: <SportsBar />,
-        description: "Avond activiteit",
-      }
-    ]
+        icon: <Restaurant />,
+        description: "Eindetentje",
+      },
+    ],
   },
   {
     title: "27 September",
@@ -150,7 +157,7 @@ export const AGENDA: {title: string, events: DayActivity[]}[] = [
         timeTitle: "Middag",
         icon: <AirlineStops />,
         description: "Vertrek met voldoening",
-      }
-    ]
-  }
-]
+      },
+    ],
+  },
+];

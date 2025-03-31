@@ -1,9 +1,9 @@
-import {FunctionComponent, PropsWithChildren} from "react";
+import { FunctionComponent, PropsWithChildren } from "react";
 
 type Props = {
-    className?: string;
-    background?: boolean;
-    title?: string;
+  className?: string;
+  background?: boolean;
+  title?: string;
 };
 
 export const ContentBlock: FunctionComponent<PropsWithChildren<Props>> = ({
@@ -13,23 +13,21 @@ export const ContentBlock: FunctionComponent<PropsWithChildren<Props>> = ({
   title,
 }) => {
   return (
-      <>
-          <div
-              className={`w-screen z-10 text-white font-semibold p-12 
-        ${background ? "bg-bermuda" : ""}
-        ${background ? "shadow-lg" : ""} 
-        ${className}`}
-          >
-              {title && (
-                  <div className="flex text-2xl font-bold justify-center">
-                      {title.toUpperCase()}
-                  </div>
-              )}
-
-              {children}
+    <>
+      <div
+        className={`w-screen z-10 text-white font-semibold p-12 mb-12 ${
+          background ? "bg-bermuda shadow-lg" : ""
+        } ${className ?? ""}`}
+      >
+        {title && (
+          <div className="flex text-2xl font-bold justify-center">
+            {title.toUpperCase()}
           </div>
-          <div className="h-12 w-screen z-10" />
-      </>
+        )}
 
+        {children}
+      </div>
+      <div className="h-12 w-screen z-10" />
+    </>
   );
 };
