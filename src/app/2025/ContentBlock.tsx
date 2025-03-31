@@ -15,7 +15,7 @@ export const ContentBlock: FunctionComponent<PropsWithChildren<Props>> = ({
   return (
     <>
       <div
-        className={`w-screen z-10 text-white font-semibold p-12 mb-12 ${
+        className={`w-screen z-10 text-white font-semibold p-12 ${
           background ? "bg-bermuda shadow-lg" : ""
         } ${className ?? ""}`}
       >
