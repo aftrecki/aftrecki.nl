@@ -27,7 +27,7 @@ export const LocationBlock: FunctionComponent<PropsWithChildren<Props>> = ({
   });
 
   return (
-    <ContentBlock background>
+    <ContentBlock background={false}>
       <div className="flex justify-center">
         <div className="flex flex-col md:flex-row bg-white rounded-lg text-black p-6 md:p-12 max-w-4xl">
           <img

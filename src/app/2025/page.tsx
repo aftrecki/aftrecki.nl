@@ -34,18 +34,36 @@ const Page: FunctionComponent = () => {
         <CountDownTimer timeToCountdown={timeToCountdown} />
       </div>
       <ContentBlock>
-        "50 kronen op Bizzle!", riep de ene student. Daarop volgde snel een
-        tegengeluid: "50 kroon op Big T!". Zelfs jaren later kan iedereen nog in
-        geuren en kleuren vertellen over deze mythische strijd. Maar waar
-        speelde dit verhaal zich ook alweer af? Op die ene heuvel in Lissabon?
-        Nee, dat kan het niet geweest zijn. In de disco-pub in Sint Petersburg?
-        Nee, daar was niet genoeg ruimte voor. Oh, ja! Het was in Praag! Om oude
-        tijden te herleven gaat de AftreCKI dit jaar een paar dagen terug naar
-        Praag! Hier zoeken we de seksmachines, musea en (hopelijk) biergartens
-        weer even terug. Dit keer zonder luxe diner van de sponsor of die
-        schimmelige, oude kelder van het hostel.
+        <div className="flex flex-col justify-center items-center">
+          <p className="max-w-4xl text-center">
+            ...en waar de eerste ontmoetingen van destijds nog onverbonden
+            individuen zich voltrokken in tijden van nieuwsgierige ontdekking,
+            innerlijke onrust en sociale chaos, daalt de stof rond deze kluwe
+            neer. De invulling van het collectief is onveranderd veranderlijk.
+            De veranderingsrichting is echter een uitbreiding van het zich
+            bewezen goed, als een pijl die niet langer uitwaards gekeerd is,
+            maar zich over de verzameling ontfermt en de successie van het
+            collectief waarborgt.
+          </p>
+        </div>
       </ContentBlock>
       <LocationBlock data={locationData as LocationData} />
+      <ContentBlock>
+        <div className="flex flex-col justify-center items-center">
+          <p className="max-w-4xl text-center">
+            De tijdelijke verhuizing vernoemd naar onanie is van dit alles een
+            accurate reflectie. Waar men zich voorheen tot in het ochtendgloren
+            laveloos waande en gegist druivensap werd genuttigd in precaire
+            omstandigheden met door het slaapkamerraam de ruis van de stad,
+            lijkt ook deze wervelwind langzaam weg te ebben. De gerieflijkheid
+            van de woonstedes die temporair worden betrokken, met hun uit hout
+            gesneden ruimtes met het kwik als focuspunt, de hoge plafonds van de
+            zalen en de wijdse velden waarin dit alles is gesitueerd. Enkel nog
+            de wilde bewegingen van het water herinneren ons aan vroeger tijden,
+            waarin de basis werd gevestigd voor onze jaarlijkse samenkomst...
+          </p>
+        </div>
+      </ContentBlock>
       <div className="flex flex-wrap row-gap-16 justify-center w-screen z-10 text-white font-semibold">
         {AGENDA.map((dayWithActivities) => (
           <DayPlanningPanel
