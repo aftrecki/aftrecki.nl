@@ -26,7 +26,6 @@ export const Splash: FunctionComponent = () => {
       className={`absolute top-0 left-0 w-full h-full object-cover z-999 ${
         fadeOut ? "animate-fade-out opacity-0" : ""
       }`}
-      src="2025/splash.mp4"
       id="splash"
       autoPlay={true}
       muted={true}
@@ -37,6 +36,8 @@ export const Splash: FunctionComponent = () => {
         setFadeOut(true);
       }}
     >
+      <source src="2025/splash.webm" type="video/webm" />
+      <source src="2025/splash.mp4" type="video/mp4" />
       Video not supported
     </video>
   );
