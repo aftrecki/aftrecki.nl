@@ -2,6 +2,17 @@
 
 @theme {
   --color-bermuda: rgba(64, 118, 166, 0.95);
+  --animate-fade-out: fade-out 1s ease-in-out 1;
+
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      display: none;
+    }
+  }
 }
 
 :root {

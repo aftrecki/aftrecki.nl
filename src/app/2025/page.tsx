@@ -1,27 +1,31 @@
 "use client";
 import Image from "next/image";
-import { FunctionComponent } from "react";
+import { FunctionComponent, useState } from "react";
 import { CountDownTimer } from "@/app/2025/CountDownTimer";
 import moment from "moment";
 import { ContentBlock } from "@/app/2025/ContentBlock";
 import { DayPlanningPanel } from "@/app/2025/DayPlanningPanel";
 import { LocationBlock } from "./LocationBlock";
+import { AGENDA } from "@/app/2025/data/agenda";
+import { Splash } from "./Splash";
 
 import locationData from "./data/location.json";
-import {AGENDA} from "@/app/2025/data/agenda";
 
 const Page: FunctionComponent = () => {
   const timeToCountdown = moment("2025-09-20T00:00:00+01:00");
 
   return (
-    <div className="grid justify-center h-screen overflow-scroll" style={{scrollbarWidth: "none"}}>
+    <div
+      className="grid justify-center h-screen overflow-scroll"
+      style={{ scrollbarWidth: "none" }}
+    >
+      <Splash />
       <Image
         src={"/2025/hetMeerInDeBuurt.jpg"}
         alt="HetHuis"
         fill
         objectFit={"cover"}
       />
-
       <div className="flex flex-col justify-center z-10 h-screen font-bold">
         <div className="flex items-center justify-center font-[EB-Garamond] text-5xl text-white uppercase mb-4">
           <strong>Vosges</strong>
@@ -29,7 +33,6 @@ const Page: FunctionComponent = () => {
 
         <CountDownTimer timeToCountdown={timeToCountdown} />
       </div>
-
       <ContentBlock>
         "50 kronen op Bizzle!", riep de ene student. Daarop volgde snel een
         tegengeluid: "50 kroon op Big T!". Zelfs jaren later kan iedereen nog in
@@ -42,18 +45,18 @@ const Page: FunctionComponent = () => {
         weer even terug. Dit keer zonder luxe diner van de sponsor of die
         schimmelige, oude kelder van het hostel.
       </ContentBlock>
-
       <LocationBlock data={locationData as LocationData} />
-
       <ContentBlock
         background={false}
         className="flex flex-wrap gap-y-16 justify-center"
       >
-          {AGENDA.map((dayWithActivities, index) => <DayPlanningPanel
-              key={index + "-" + dayWithActivities.title}
-              dateTitle={dayWithActivities.title}
-              activities={dayWithActivities.events}
-          />)}
+        {AGENDA.map((dayWithActivities) => (
+          <DayPlanningPanel
+            key={dayWithActivities.title}
+            dateTitle={dayWithActivities.title}
+            activities={dayWithActivities.events}
+          />
+        ))}
       </ContentBlock>
     </div>
   );
