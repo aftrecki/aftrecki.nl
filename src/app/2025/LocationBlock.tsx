@@ -2,7 +2,7 @@
 
 import {
   FunctionComponent,
-  PropsWithChildren,
+  PropsWithChildren, Ref,
   useEffect,
   useState,
 } from "react";
@@ -10,10 +10,11 @@ import { ContentBlock } from "./ContentBlock";
 
 type Props = {
   data: LocationData;
+  ref?: Ref<HTMLDivElement>;
 };
 
 export const LocationBlock: FunctionComponent<PropsWithChildren<Props>> = ({
-  data,
+  data, ref
 }: Props) => {
   const widthBorder = 700;
   const [smallscreen, setSmallscreen] = useState<boolean>(false);
@@ -29,7 +30,7 @@ export const LocationBlock: FunctionComponent<PropsWithChildren<Props>> = ({
   return (
     <ContentBlock background={false}>
       <div className="flex justify-center">
-        <div className="flex flex-col md:flex-row bg-white rounded-lg text-black p-6 md:p-12 max-w-4xl">
+        <div className="flex flex-col md:flex-row bg-white rounded-lg text-black p-6 md:p-12 max-w-4xl" ref={ref}>
           <img
             className="w-full md:w-2/5 rounded-lg object-cover"
             src={data.thumbnail}

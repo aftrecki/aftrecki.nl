@@ -1,20 +1,22 @@
-import {FunctionComponent } from "react";
+import {FunctionComponent, Ref} from "react";
 import {DayActivity} from "@/app/2025/data/agenda";
 
 type Props = {
   dateTitle: string;
   activities: DayActivity[];
+  ref?: Ref<HTMLDivElement>;
 };
 
 export const DayPlanningPanel: FunctionComponent<Props> = ({
   dateTitle,
   activities,
+  ref
 }) => {
   const eenBoxie =
     "flex bg-bermuda p-4 rounded-md shadow-md min-w-[225px] max-w-[340px]";
 
   return (
-    <div className="grid grid-rows-[auto_1fr] p-2">
+    <div className="grid grid-rows-[auto_1fr] p-2" ref={ref}>
       <div
         className={`${eenBoxie} font-bold justify-center tracking-wider mb-2`}
       >

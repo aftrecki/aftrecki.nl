@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import {FunctionComponent, useState} from "react";
+import {FunctionComponent, useRef} from "react";
 import {CountDownTimer} from "@/app/2025/CountDownTimer";
 import moment from "moment";
 import {ContentBlock} from "@/app/2025/ContentBlock";
@@ -10,17 +10,22 @@ import {AGENDA} from "@/app/2025/data/agenda";
 import {Splash} from "./Splash";
 
 import locationData from "./data/location.json";
+import {MenuLogo} from "@/app/2025/MenuLogo";
+import {ArrowUpward, CalendarMonth, Hotel} from "@mui/icons-material";
 
 const Page: FunctionComponent = () => {
     const timeToCountdown = moment("2025-09-20T00:00:00+02:00");
 
-    const [logoTurning, setLogoTurning] = useState(false)
+    const locationRef = useRef<HTMLDivElement>(null)
+    const topRef = useRef<HTMLDivElement>(null)
+    const scheduleRef = useRef<HTMLDivElement>(null)
 
     return (
         <div
             className="grid justify-center h-screen overflow-scroll"
             style={{scrollbarWidth: "none"}}
         >
+            <div ref={topRef} className="h-0 w-0" />
             <Splash/>
             <Image
                 src={"/2025/hetMeerInDeBuurt.jpg"}
@@ -28,19 +33,22 @@ const Page: FunctionComponent = () => {
                 fill
                 objectFit={"cover"}
             />
-            <Image
-                className="z-15 flex justify-center absolute top-4 right-4"
-                style={{
-                    transform: logoTurning ? "rotate(370deg)" : "rotate(0deg)",
-                    transitionTimingFunction: "cubic-bezier(0.28,-0.59, 0.63, 1.47)",
-                    transitionDuration: "1s"
-                }}
-                src={"/2025/logo.png"}
-                alt="HetHuis"
-                width={50}
-                height={50}
-                onClick={() => {setLogoTurning(!logoTurning)}}
-                objectFit={"cover"}/>
+            <div className="z-15 flex justify-center absolute top-4 right-4">
+                <MenuLogo data={[
+                    {
+                        ref: topRef,
+                        icon: <ArrowUpward style={{width: "30px", height: "30px", color: "white"}}/>
+                    },
+                    {
+                        ref: locationRef,
+                        icon: <Hotel style={{width: "30px", height: "30px", color: "white"}}/>
+                    },
+                    {
+                        ref: scheduleRef,
+                        icon: <CalendarMonth style={{width: "30px", height: "30px", color: "white"}}/>
+                    }
+                ]} />
+            </div>
             <div className="flex flex-col justify-center z-10 h-screen font-bold">
                 <div className="flex items-center justify-center font-[EB-Garamond] text-5xl text-white uppercase mb-4">
                     <strong>Vosges</strong>
@@ -62,7 +70,7 @@ const Page: FunctionComponent = () => {
                     </p>
                 </div>
             </ContentBlock>
-            <LocationBlock data={locationData as LocationData}/>
+            <LocationBlock data={locationData as LocationData} ref={locationRef}/>
             <ContentBlock>
                 <div className="flex flex-col justify-center items-center">
                     <p className="max-w-4xl text-center">
@@ -82,6 +90,7 @@ const Page: FunctionComponent = () => {
             <div className="flex flex-wrap row-gap-16 justify-center w-screen z-10 text-white font-semibold">
                 {AGENDA.map((dayWithActivities) => (
                     <DayPlanningPanel
+                        ref={scheduleRef}
                         key={dayWithActivities.title}
                         dateTitle={dayWithActivities.title}
                         activities={dayWithActivities.events}
