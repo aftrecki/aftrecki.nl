@@ -11,7 +11,7 @@ import {Splash} from "./Splash";
 
 import locationData from "./data/location.json";
 import {MenuLogo} from "@/app/2025/MenuLogo";
-import {ArrowUpward, CalendarMonth, Hotel} from "@mui/icons-material";
+import {AccessTime, CalendarMonth, Hotel} from "@mui/icons-material";
 
 const Page: FunctionComponent = () => {
     const timeToCountdown = moment("2025-09-20T00:00:00+02:00");
@@ -37,7 +37,7 @@ const Page: FunctionComponent = () => {
                 <MenuLogo data={[
                     {
                         ref: topRef,
-                        icon: <ArrowUpward style={{width: "30px", height: "30px", color: "white"}}/>
+                        icon: <AccessTime style={{width: "30px", height: "30px", color: "white"}}/>
                     },
                     {
                         ref: locationRef,
