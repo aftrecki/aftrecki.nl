@@ -87,10 +87,9 @@ const Page: FunctionComponent = () => {
                     </p>
                 </div>
             </ContentBlock>
-            <div className="flex flex-wrap row-gap-16 justify-center w-screen z-10 text-white font-semibold">
+            <div ref={scheduleRef} className="flex flex-wrap row-gap-16 justify-center w-screen z-10 text-white font-semibold">
                 {AGENDA.map((dayWithActivities) => (
                     <DayPlanningPanel
-                        ref={scheduleRef}
                         key={dayWithActivities.title}
                         dateTitle={dayWithActivities.title}
                         activities={dayWithActivities.events}

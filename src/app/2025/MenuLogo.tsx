@@ -50,7 +50,7 @@ export const MenuLogo: FunctionComponent<Props> = ({data, style = {}}) => {
                     className="z-14 flex justify-center absolute top-2 right-2"
                     onClick={() => {
                         if (menuOpen) {
-                            element.ref.current?.scrollIntoView({behavior: "smooth", block: "end"})
+                            element.ref.current?.scrollIntoView({behavior: "smooth"})
                             setMenuOpen(false)
                         }
                     }}
