@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import {FunctionComponent} from "react";
+import {FunctionComponent, useState} from "react";
 import {CountDownTimer} from "@/app/2025/CountDownTimer";
 import moment from "moment";
 import {ContentBlock} from "@/app/2025/ContentBlock";
@@ -13,6 +13,8 @@ import locationData from "./data/location.json";
 
 const Page: FunctionComponent = () => {
     const timeToCountdown = moment("2025-09-20T00:00:00+02:00");
+
+    const [logoTurning, setLogoTurning] = useState(false)
 
     return (
         <div
@@ -27,15 +29,35 @@ const Page: FunctionComponent = () => {
                 objectFit={"cover"}
             />
             <Image
-                className="z-15 flex justify-center absolute top-2 right-2"
+                className="z-15 flex justify-center absolute top-4 right-4"
+                style={{
+                    transform: logoTurning ? "rotate(370deg)" : "rotate(0deg)",
+                    transitionTimingFunction: "cubic-bezier(0.28,-0.59, 0.63, 1.47)",
+                    transitionDuration: "1s"
+                }}
                 src={"/2025/logo.png"}
                 alt="HetHuis"
                 width={50}
                 height={50}
+                onClick={() => {setLogoTurning(!logoTurning)}}
                 objectFit={"cover"}/>
             <div className="flex flex-col justify-center z-10 h-screen font-bold">
                 <div className="flex items-center justify-center font-[EB-Garamond] text-5xl text-white uppercase mb-4">
+                    <Image
+                        className="z-15 flex justify-center pr-2"
+                        src={"/2025/logo.png"}
+                        alt="HetHuis"
+                        width={50}
+                        height={50}
+                        objectFit={"cover"}/>
                     <strong>Vosges</strong>
+                    <Image
+                        className="z-15 flex justify-center pl-2"
+                        src={"/2025/logo.png"}
+                        alt="HetHuis"
+                        width={50}
+                        height={50}
+                        objectFit={"cover"}/>
                 </div>
 
                 <CountDownTimer timeToCountdown={timeToCountdown}/>
