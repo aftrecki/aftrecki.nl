@@ -12,7 +12,7 @@ import {Splash} from "./Splash";
 import locationData from "./data/location.json";
 
 const Page: FunctionComponent = () => {
-    const timeToCountdown = moment("2025-09-20T00:00:00+01:00");
+    const timeToCountdown = moment("2025-09-20T00:00:00+02:00");
 
     return (
         <div
