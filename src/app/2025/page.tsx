@@ -43,21 +43,7 @@ const Page: FunctionComponent = () => {
                 objectFit={"cover"}/>
             <div className="flex flex-col justify-center z-10 h-screen font-bold">
                 <div className="flex items-center justify-center font-[EB-Garamond] text-5xl text-white uppercase mb-4">
-                    <Image
-                        className="z-15 flex justify-center pr-2"
-                        src={"/2025/logo.png"}
-                        alt="HetHuis"
-                        width={50}
-                        height={50}
-                        objectFit={"cover"}/>
                     <strong>Vosges</strong>
-                    <Image
-                        className="z-15 flex justify-center pl-2"
-                        src={"/2025/logo.png"}
-                        alt="HetHuis"
-                        width={50}
-                        height={50}
-                        objectFit={"cover"}/>
                 </div>
 
                 <CountDownTimer timeToCountdown={timeToCountdown}/>
