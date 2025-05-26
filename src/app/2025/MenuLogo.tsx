@@ -1,5 +1,6 @@
 import {CSSProperties, FunctionComponent, ReactNode, RefObject, useState} from "react";
 import Image from "next/image";
+import {Tooltip} from "@mui/material";
 
 type Props = {
     style?: CSSProperties;
@@ -28,21 +29,23 @@ export const MenuLogo: FunctionComponent<Props> = ({data, style = {}}) => {
     }
 
     return <div style={style} className="flex w-50 h-50">
-        <Image
-            className="z-15 flex justify-center absolute top-0 right-0"
-            style={{
-                transform: menuOpen ? "rotate(765deg)" : "rotate(0deg)",
-                transitionTimingFunction: "cubic-bezier(0.47, 0.08, 0.45, 1.3)",
-                transitionDuration: "0.8s"
-            }}
-            src={menuOpen ? "/2025/fap.gif" : "/2025/logo.png"}
-            alt="Logo"
-            width={50}
-            height={50}
-            onClick={() => {
-                setMenuOpen(!menuOpen)
-            }}
-            objectFit={"cover"}/>
+        <Tooltip title={"Cockie Clicker"}>
+            <Image
+                className="z-15 flex justify-center absolute top-0 right-0"
+                style={{
+                    transform: menuOpen ? "rotate(765deg)" : "rotate(0deg)",
+                    transitionTimingFunction: "cubic-bezier(0.47, 0.08, 0.45, 1.3)",
+                    transitionDuration: "0.8s"
+                }}
+                src={menuOpen ? "/2025/fap.gif" : "/2025/logo.png"}
+                alt="Logo"
+                width={50}
+                height={50}
+                onClick={() => {
+                    setMenuOpen(!menuOpen)
+                }}
+                objectFit={"cover"}/>
+        </Tooltip>
         {
             data.map((element, index) => {
                 return <div
