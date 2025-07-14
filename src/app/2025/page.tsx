@@ -87,7 +87,7 @@ const Page: FunctionComponent = () => {
                     </p>
                 </div>
             </ContentBlock>
-            <ContentBlock inverseRotate>
+            <ContentBlock>
                 <div className="flex flex-col justify-center items-center">
                     <p className="max-w-4xl text-center text-xl text-rose-400">
                         Het schema is nog niet definitief!<br />
