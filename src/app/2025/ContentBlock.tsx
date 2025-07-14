@@ -17,11 +17,12 @@ export const ContentBlock: FunctionComponent<PropsWithChildren<Props>> = ({
     return (
         <>
             <div
-                className={`w-[105vw] z-10 text-white font-semibold p-12 ${inverseRotate ? "-" : ""}rotate-2 ${
+                className={`w-[105vw] z-10 text-white font-semibold p-12 ${
                     background ? "bg-bermuda shadow-lg" : ""
                 } ${className ?? ""}`}
+                style={{rotate: `calc(3deg * ${inverseRotate ? "-1" : "1"})`}}
             >
-                <div className={`${inverseRotate ? "" : "-"}rotate-2`}>
+                <div style={{rotate: `calc(3deg * ${inverseRotate ? "1" : "-1"})`}}>
                     {title && (
                         <div className="flex text-2xl font-bold justify-center">
                             {title.toUpperCase()}
