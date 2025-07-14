@@ -87,6 +87,14 @@ const Page: FunctionComponent = () => {
                     </p>
                 </div>
             </ContentBlock>
+            <ContentBlock >
+                <div className="flex flex-col justify-center items-center">
+                    <p className="max-w-4xl text-center text-xl text-rose-400">
+                        Het schema is nog niet definitief!<br />
+                        Voel je vrij om aanpassingen te verzoeken bij de organisatie.
+                    </p>
+                </div>
+            </ContentBlock>
             <div ref={scheduleRef} className="flex flex-wrap row-gap-16 justify-center w-screen z-10 text-white font-semibold">
                 {AGENDA.map((dayWithActivities) => (
                     <DayPlanningPanel
