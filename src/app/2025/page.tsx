@@ -89,7 +89,7 @@ const Page: FunctionComponent = () => {
             </ContentBlock>
             <ContentBlock>
                 <div className="flex flex-col justify-center items-center">
-                    <p className="max-w-4xl text-center text-xl text-rose-400">
+                    <p className="max-w-4xl text-center text-xl">
                         Het schema is nog niet definitief!<br />
                         Voel je vrij om aanpassingen te verzoeken bij de organisatie.
                     </p>
