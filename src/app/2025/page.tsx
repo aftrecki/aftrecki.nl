@@ -23,7 +23,7 @@ const Page: FunctionComponent = () => {
     return (
         <div
             className="grid justify-center h-screen overflow-scroll"
-            style={{scrollbarWidth: "none"}}
+            style={{scrollbarWidth: "none", overflowX: "hidden"}}
         >
             <div ref={topRef} className="h-0 w-0" />
             <Splash/>
@@ -71,7 +71,7 @@ const Page: FunctionComponent = () => {
                 </div>
             </ContentBlock>
             <LocationBlock data={locationData as LocationData} ref={locationRef}/>
-            <ContentBlock>
+            <ContentBlock inverseRotate>
                 <div className="flex flex-col justify-center items-center">
                     <p className="max-w-4xl text-center">
                         De tijdelijke verhuizing vernoemd naar onanie is van dit alles een
@@ -87,7 +87,7 @@ const Page: FunctionComponent = () => {
                     </p>
                 </div>
             </ContentBlock>
-            <ContentBlock >
+            <ContentBlock inverseRotate>
                 <div className="flex flex-col justify-center items-center">
                     <p className="max-w-4xl text-center text-xl text-rose-400">
                         Het schema is nog niet definitief!<br />

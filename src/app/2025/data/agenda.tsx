@@ -70,7 +70,7 @@ export const AGENDA: { title: string; events: DayActivity[] }[] = [
             },
             {
                 timeTitle: "20:00",
-                description: "Wanking de stars",
+                description: "Wanking the stars",
                 icon: <ThumbsUpDown/>
             }
         ],

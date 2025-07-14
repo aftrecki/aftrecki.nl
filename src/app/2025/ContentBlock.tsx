@@ -1,33 +1,37 @@
-import { FunctionComponent, PropsWithChildren } from "react";
+import {FunctionComponent, PropsWithChildren} from "react";
 
 type Props = {
-  className?: string;
-  background?: boolean;
-  title?: string;
+    className?: string;
+    background?: boolean;
+    title?: string;
+    inverseRotate?: boolean;
 };
 
 export const ContentBlock: FunctionComponent<PropsWithChildren<Props>> = ({
-  children,
-  className,
-  background = true,
-  title,
-}) => {
-  return (
-    <>
-      <div
-        className={`w-screen z-10 text-white font-semibold p-12 ${
-          background ? "bg-bermuda shadow-lg" : ""
-        } ${className ?? ""}`}
-      >
-        {title && (
-          <div className="flex text-2xl font-bold justify-center">
-            {title.toUpperCase()}
-          </div>
-        )}
+                                                                              children,
+                                                                              className,
+                                                                              background = true,
+                                                                              inverseRotate = false,
+                                                                              title,
+                                                                          }) => {
+    return (
+        <>
+            <div
+                className={`w-[105vw] z-10 text-white font-semibold p-12 ${inverseRotate ? "-" : ""}rotate-2 ${
+                    background ? "bg-bermuda shadow-lg" : ""
+                } ${className ?? ""}`}
+            >
+                <div className={`${inverseRotate ? "" : "-"}rotate-2`}>
+                    {title && (
+                        <div className="flex text-2xl font-bold justify-center">
+                            {title.toUpperCase()}
+                        </div>
+                    )}
 
-        {children}
-      </div>
-      <div className="h-12 w-screen z-10" />
-    </>
-  );
+                    {children}
+                </div>
+            </div>
+            <div className="h-12 w-screen z-10"/>
+        </>
+    );
 };
