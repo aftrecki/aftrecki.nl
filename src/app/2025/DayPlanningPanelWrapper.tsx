@@ -10,8 +10,7 @@ export const DayPlanningPanelWrapper: FunctionComponent<PropsWithChildren> = ({c
         margin: isBigScreen ? "0 15%" : "0",
         gap: isBigScreen ? "70px 0" : "30px 0",
         justifyContent: "center",
-        gridTemplateColumns: isBigScreen ? "repeat(auto-fill, minmax(300px, 1fr))" : "1fr",
-        gridTemplateRows: "1fr 1fr 1fr",
+        gridTemplateColumns: isBigScreen ? "repeat(auto-fill, minmax(300px, 1fr))" : "1fr"
     }}>
         {children}
     </div>
