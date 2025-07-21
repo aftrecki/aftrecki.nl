@@ -13,10 +13,10 @@ export const DayPlanningPanel: FunctionComponent<Props> = ({
   ref
 }) => {
   const eenBoxie =
-    "flex bg-bermuda p-4 rounded-md shadow-md min-w-[225px] max-w-[340px]";
+    "flex bg-bermuda p-4 rounded-md shadow-md min-w-[225px] max-w-[340px] w-9/10";
 
   return (
-    <div className="grid grid-rows-[auto_1fr] p-2" ref={ref}>
+    <div className="grid grid-rows-[auto_1fr] p-2 w-full justify-items-center" ref={ref}>
       <div
         className={`${eenBoxie} font-bold justify-center tracking-wider mb-2`}
       >

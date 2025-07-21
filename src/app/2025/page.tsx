@@ -12,6 +12,7 @@ import {Splash} from "./Splash";
 import locationData from "./data/location.json";
 import {MenuLogo} from "@/app/2025/MenuLogo";
 import {AccessTime, CalendarMonth, Hotel} from "@mui/icons-material";
+import {DayPlanningPanelWrapper} from "@/app/2025/DayPlanningPanelWrapper";
 
 const Page: FunctionComponent = () => {
     const timeToCountdown = moment("2025-09-20T00:00:00+02:00");
@@ -95,14 +96,16 @@ const Page: FunctionComponent = () => {
                     </p>
                 </div>
             </ContentBlock>
-            <div ref={scheduleRef} className="flex flex-wrap row-gap-16 justify-center w-screen z-10 text-white font-semibold">
-                {AGENDA.map((dayWithActivities) => (
-                    <DayPlanningPanel
-                        key={dayWithActivities.title}
-                        dateTitle={dayWithActivities.title}
-                        activities={dayWithActivities.events}
-                    />
-                ))}
+            <div ref={scheduleRef} className="flex flex-wrap row-gap-16 justify-center z-10 text-white font-semibold w-full">
+                <DayPlanningPanelWrapper>
+                    {AGENDA.map((dayWithActivities) => (
+                        <DayPlanningPanel
+                            key={dayWithActivities.title}
+                            dateTitle={dayWithActivities.title}
+                            activities={dayWithActivities.events}
+                        />
+                    ))}
+                </DayPlanningPanelWrapper>
             </div>
             <div className="flex h-25"/>
         </div>
