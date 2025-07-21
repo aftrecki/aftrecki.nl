@@ -28,7 +28,7 @@ export const DayPlanningPanel: FunctionComponent<Props> = ({
           return (
             <div
               className="flex border-b-2 last:border-0 border-white pt-2 pb-2"
-              key={activity.timeTitle}
+              key={activity.description}
             >
               <div className="flex justify-between pb-1">{activity.icon}</div>
 

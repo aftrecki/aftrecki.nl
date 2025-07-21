@@ -1,7 +1,4 @@
 import {
-    AirlineStops,
-    DirectionsCar,
-    Luggage,
     LocalGroceryStore,
     SelfImprovement,
     Attractions,
@@ -11,10 +8,9 @@ import {
     DirectionsWalk,
     MedicationLiquid,
     LockClock,
-    WaterDamage,
     ThumbsUpDown,
     Cake,
-    CrisisAlert, Celebration, DinnerDining,
+    CrisisAlert, Celebration, DinnerDining, LocalDining, FlightTakeoff, FlightLand,
 } from "@mui/icons-material";
 import {ReactElement} from "react";
 
@@ -31,38 +27,28 @@ export const AGENDA: { title: string; events: DayActivity[] }[] = [
             {
                 timeTitle: "09:00",
                 description: "Vertrek uit Utrecht!",
-                icon: <DirectionsCar/>
+                icon: <FlightTakeoff/>
             },
             {
                 timeTitle: "16:00",
                 description: "Check-in",
-                icon: <Luggage/>
+                icon: <FlightLand/>
             },
             {
                 timeTitle: "17:00",
                 description: "Boodschappen",
                 icon: <LocalGroceryStore/>
             },
-            {
-                timeTitle: "Avond",
-                description: "Wijn, eten en sauna",
-                icon: <WaterDamage/>
-            }
         ],
     },
     {
         title: "21 September",
         events: [
             {
-                timeTitle: "09:00",
+                timeTitle: "10:00",
                 description: "Groepsyoga",
                 icon: <SelfImprovement/>,
             },
-        ],
-    },
-    {
-        title: "22 September",
-        events: [
             {
                 timeTitle: "10:00",
                 description: "Tijdcapsule",
@@ -76,10 +62,20 @@ export const AGENDA: { title: string; events: DayActivity[] }[] = [
         ],
     },
     {
+        title: "22 September",
+        events: [
+            {
+                timeTitle: "18:00",
+                description: "Murder Mystery Dinner",
+                icon: <CrisisAlert/>
+            }
+        ],
+    },
+    {
         title: "23 September",
         events: [
             {
-                timeTitle: "Hele dag",
+                timeTitle: "Ochtend en middag",
                 description: "Europapark!",
                 icon: <Attractions/>,
             }
@@ -90,7 +86,7 @@ export const AGENDA: { title: string; events: DayActivity[] }[] = [
         events: [
             {
                 timeTitle: "13:30",
-                description: "Opwarmen",
+                description: "Warming-up",
                 icon: <HotTub/>,
             },
             {
@@ -100,7 +96,7 @@ export const AGENDA: { title: string; events: DayActivity[] }[] = [
             },
             {
                 timeTitle: "20:00",
-                description: "Tim's Bursdee Bes met Tim",
+                description: "Tim's Bursdee Bes",
                 icon: <Cake/>
             }
         ],
@@ -109,20 +105,20 @@ export const AGENDA: { title: string; events: DayActivity[] }[] = [
         title: "25 September",
         events: [
             {
-                timeTitle: "10:00",
-                description: "Stadswandeling met Jop en Thomas",
-                icon: <DirectionsWalk/>,
-            },
-            {
                 timeTitle: "Hele dag",
                 description: "Dagje Strasbourgh",
                 icon: <AssistWalker/>,
             },
             {
+                timeTitle: "10:00",
+                description: "Stadswandeling met Jop en Thomas",
+                icon: <DirectionsWalk/>,
+            },
+            {
                 timeTitle: "18:00",
-                description: "Murder Mystery Dinner",
-                icon: <CrisisAlert/>
-            }
+                description: "Eten in Strasbourgh",
+                icon: <LocalDining/>,
+            },
         ],
     },
     {
@@ -151,7 +147,12 @@ export const AGENDA: { title: string; events: DayActivity[] }[] = [
             {
                 timeTitle: "10:00",
                 description: "Check-out",
-                icon: <AirlineStops/>,
+                icon: <FlightTakeoff/>,
+            },
+            {
+                timeTitle: "18:00",
+                description: "Aankomst in Utrecht",
+                icon: <FlightLand/>,
             },
         ],
     },
