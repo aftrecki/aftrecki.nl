@@ -4,6 +4,9 @@
   --color-bermuda: rgba(64, 118, 166, 1);
   --animate-fade-out: fade-out 1s ease-in-out 1;
 
+  --my-font-header: "EB Garamond", sans-serif;
+  --my-font: "Red Hat Display";
+
   @keyframes fade-out {
     0% {
       opacity: 1;

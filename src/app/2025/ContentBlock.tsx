@@ -17,7 +17,7 @@ export const ContentBlock: FunctionComponent<PropsWithChildren<Props>> = ({
     return (
         <>
             <div
-                className={`w-[105vw] z-10 text-white font-semibold p-12 ${
+                className={`w-[105vw] z-10 text-gray-200 font-600 p-12 font-(family-name:--my-font) ${
                     background ? "bg-bermuda shadow-lg" : ""
                 } ${className ?? ""}`}
                 style={{rotate: `calc(3deg * ${inverseRotate ? "-1" : "1"})`}}

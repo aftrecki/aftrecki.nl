@@ -26,10 +26,22 @@ const Page: FunctionComponent = () => {
             className="grid justify-center h-screen overflow-scroll"
             style={{scrollbarWidth: "none", overflowX: "hidden"}}
         >
+            <link
+                rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=Bebas+Neue"
+            />
+            <link
+                rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=EB+Garamond"
+            />
+            <link
+                rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=Red+Hat+Display"
+            />
             <div ref={topRef} className="h-0 w-0" />
             <Splash/>
             <Image
-                src={"/2025/hetMeerInDeBuurt.jpg"}
+                src={"/2025/vosgesAdjusted.jpg"}
                 alt="HetHuis"
                 fill
                 objectFit={"cover"}
@@ -51,7 +63,7 @@ const Page: FunctionComponent = () => {
                 ]} />
             </div>
             <div className="flex flex-col justify-center z-10 h-screen font-bold">
-                <div className="flex items-center justify-center font-[EB-Garamond] text-5xl text-white uppercase mb-4">
+                <div className="flex items-center justify-center font-(family-name:--my-font-header) text-5xl text-white uppercase mb-4">
                     <strong>Vosges</strong>
                 </div>
 
@@ -59,7 +71,7 @@ const Page: FunctionComponent = () => {
             </div>
             <ContentBlock>
                 <div className="flex flex-col justify-center items-center">
-                    <p className="max-w-4xl text-center">
+                    <p className="max-w-xl text-center">
                         ...en waar de eerste ontmoetingen van destijds nog onverbonden
                         individuen zich voltrokken in tijden van nieuwsgierige ontdekking,
                         innerlijke onrust en sociale chaos, daalt de stof rond deze kluwe
@@ -74,7 +86,7 @@ const Page: FunctionComponent = () => {
             <LocationBlock data={locationData as LocationData} ref={locationRef}/>
             <ContentBlock inverseRotate>
                 <div className="flex flex-col justify-center items-center">
-                    <p className="max-w-4xl text-center">
+                    <p className="max-w-xl text-center">
                         De tijdelijke verhuizing vernoemd naar onanie is van dit alles een
                         accurate reflectie. Waar men zich voorheen tot in het ochtendgloren
                         laveloos waande en gegist druivensap werd genuttigd in precaire
@@ -90,7 +102,7 @@ const Page: FunctionComponent = () => {
             </ContentBlock>
             <ContentBlock>
                 <div className="flex flex-col justify-center items-center">
-                    <p className="max-w-4xl text-center text-xl">
+                    <p className="max-w-4xl text-center text-xl font-semibold">
                         Het schema is nog niet definitief!<br />
                         Voel je vrij om aanpassingen te verzoeken bij de organisatie.
                     </p>
