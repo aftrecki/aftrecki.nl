@@ -31,14 +31,23 @@ export const LocationBlock: FunctionComponent<PropsWithChildren<Props>> = ({
         <ContentBlock background={false}>
             <div className="flex justify-center">
                 <div className="flex flex-col md:flex-row bg-white rounded-lg text-black p-6 md:p-12 max-w-4xl"
+                     style={{
+                         boxShadow: "rgb(30, 30, 30) 0px 0px 20px",
+                }}
                      ref={ref}>
                     <img
                         className="w-full md:w-2/5 rounded-lg object-cover"
+                        style={{
+                            boxShadow: "rgb(40, 40, 40) 0px 0px 5px",
+                            rotate: "calc(-1deg)"
+                    }}
                         src={data.thumbnail}
                         alt="Villa"
                     />
 
-                    <div className="w-full flex-2 flex-col items-center  md:w-2/5 p-6 ">
+                    <div
+                        className="w-full flex-2 flex-col items-center  md:w-2/5 p-6 "
+                    >
                         <h2 className="w-full text-2xl font-bold text-center">
                             {data.title}
                         </h2>

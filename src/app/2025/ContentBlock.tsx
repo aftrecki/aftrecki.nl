@@ -22,7 +22,7 @@ export const ContentBlock: FunctionComponent<PropsWithChildren<Props>> = ({
                 } ${className ?? ""}`}
                 style={{
                     rotate: `calc(3deg * ${inverseRotate ? "-1" : "1"})`,
-                    boxShadow: background ? "rgb(40, 40, 40) 7px 0px 20px" : "none"
+                    boxShadow: background ? "rgb(40, 40, 40) 0px 0px 20px" : "none"
             }}
             >
                 <div style={{rotate: `calc(3deg * ${inverseRotate ? "1" : "-1"})`}}>
