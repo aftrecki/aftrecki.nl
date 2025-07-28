@@ -18,9 +18,12 @@ export const ContentBlock: FunctionComponent<PropsWithChildren<Props>> = ({
         <>
             <div
                 className={`w-[105vw] z-10 text-gray-200 font-600 p-12 font-(family-name:--my-font) ${
-                    background ? "bg-bermuda shadow-lg" : ""
+                    background ? "bg-bermuda" : ""
                 } ${className ?? ""}`}
-                style={{rotate: `calc(3deg * ${inverseRotate ? "-1" : "1"})`}}
+                style={{
+                    rotate: `calc(3deg * ${inverseRotate ? "-1" : "1"})`,
+                    boxShadow: background ? "rgb(40, 40, 40) 7px 0px 20px" : "none"
+            }}
             >
                 <div style={{rotate: `calc(3deg * ${inverseRotate ? "1" : "-1"})`}}>
                     {title && (
