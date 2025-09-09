@@ -75,6 +75,26 @@ export const AGENDA: { title: string; events: DayActivity[] }[] = [
         title: "23 September",
         events: [
             {
+                timeTitle: "Hele dag",
+                description: "Dagje Strasbourgh",
+                icon: <AssistWalker/>,
+            },
+            {
+                timeTitle: "10:00",
+                description: "Stadswandeling met Jop en Thomas",
+                icon: <DirectionsWalk/>,
+            },
+            {
+                timeTitle: "18:00",
+                description: "Eten in Strasbourgh",
+                icon: <LocalDining/>,
+            },
+        ],
+    },
+    {
+        title: "24 September",
+        events: [
+            {
                 timeTitle: "Ochtend en middag",
                 description: "Europapark!",
                 icon: <Attractions/>,
@@ -82,7 +102,7 @@ export const AGENDA: { title: string; events: DayActivity[] }[] = [
         ],
     },
     {
-        title: "24 September",
+        title: "25 September",
         events: [
             {
                 timeTitle: "13:30",
@@ -99,26 +119,6 @@ export const AGENDA: { title: string; events: DayActivity[] }[] = [
                 description: "Tim's Bursdee Bes",
                 icon: <Cake/>
             }
-        ],
-    },
-    {
-        title: "25 September",
-        events: [
-            {
-                timeTitle: "Hele dag",
-                description: "Dagje Strasbourgh",
-                icon: <AssistWalker/>,
-            },
-            {
-                timeTitle: "10:00",
-                description: "Stadswandeling met Jop en Thomas",
-                icon: <DirectionsWalk/>,
-            },
-            {
-                timeTitle: "18:00",
-                description: "Eten in Strasbourgh",
-                icon: <LocalDining/>,
-            },
         ],
     },
     {

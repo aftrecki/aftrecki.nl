@@ -1,0 +1,56 @@
+[
+  {
+    "carName": "Opa Korsta",
+    "owner": "Pim",
+    "passengers": [
+      "Pim",
+      "Lara",
+      "Tjeu",
+      "Perry"
+    ]
+  },
+  {
+    "carName": "Familiepanzer",
+    "owner": "Jop en Nienke",
+    "passengers": [
+      "Jop",
+      "Nienke",
+      "Loek"
+    ]
+  },
+  {
+    "carName": "Woonwijk Warrior",
+    "owner": "Simone en Jaap",
+    "passengers": [
+      "Simone",
+      "Jaap",
+      "Merel"
+    ]
+  },
+  {
+    "carName": "Turbo Tony",
+    "owner": "Ginny",
+    "passengers": [
+      "Ginny",
+      "Richard",
+      "Niels"
+    ]
+  },
+  {
+    "carName": "Lover Car",
+    "owner": "Thomas en Melissa",
+    "passengers": [
+      "Thomas",
+      "Melissa",
+      "Emmet",
+      "Tim"
+    ]
+  },
+  {
+    "carName": "Cabrio op 2 wielen",
+    "owner": "Tariq",
+    "passengers": [
+      "Tariq"
+    ]
+  }
+]

@@ -14,18 +14,23 @@ export const MenuLogo: FunctionComponent<Props> = ({data, style = {}}) => {
     const [menuOpen, setMenuOpen] = useState(false)
 
     const calcTranslateX = (index: number, total: number) => {
-        console.log(index, total)
+        const position = index < 3 ? index : index - 3
+        const totalInLayer = index < 3 ? Math.min(3, total) : total
+
         return Math.cos(
             Math.PI + (
-                (Math.PI / 2) * ((index) / (total - 1))
+                (Math.PI / 2) * ((position) / (totalInLayer - 1))
             )
-        ) * 60
+        ) * (index < 3 ? 60 : 100)
     }
 
     const calcTranslateY = (index: number, total: number) => {
+        const position = index < 3 ? index : index - 3
+        const totalInLayer = index < 3 ? Math.min(3, total) : total
+
         return Math.sin(
-            (Math.PI / 2) * ((index) / (total - 1))
-        ) * 60
+            (Math.PI / 2) * ((position) / (totalInLayer - 1))
+        ) * (index < 3 ? 60 : 100)
     }
 
     return <div style={style} className="flex w-50 h-50">

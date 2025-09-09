@@ -1,7 +1,7 @@
 import {FunctionComponent, PropsWithChildren} from "react";
 import {useMediaQuery} from "@mui/material";
 
-export const DayPlanningPanelWrapper: FunctionComponent<PropsWithChildren> = ({children}) => {
+export const AftreckiPanelWrapper: FunctionComponent<PropsWithChildren> = ({children}) => {
     const isBigScreen = useMediaQuery('(min-width:820px)')
 
     return <div style={{

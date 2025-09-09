@@ -9,10 +9,12 @@ import {LocationBlock} from "./LocationBlock";
 import {AGENDA} from "@/app/2025/data/agenda";
 import {Splash} from "./Splash";
 
+import carpoolData from "@/app/2025/data/carpool.json";
 import locationData from "./data/location.json";
 import {MenuLogo} from "@/app/2025/MenuLogo";
-import {AccessTime, CalendarMonth, Hotel} from "@mui/icons-material";
-import {DayPlanningPanelWrapper} from "@/app/2025/DayPlanningPanelWrapper";
+import {AccessTime, CalendarMonth, DirectionsCar, Hotel} from "@mui/icons-material";
+import {AftreckiPanelWrapper} from "@/app/2025/AftreckiPanelWrapper";
+import {AftreckiPanel} from "@/app/2025/AftreckiPanel";
 
 const Page: FunctionComponent = () => {
     const timeToCountdown = moment("2025-09-20T00:00:00+02:00");
@@ -20,6 +22,7 @@ const Page: FunctionComponent = () => {
     const locationRef = useRef<HTMLDivElement>(null)
     const topRef = useRef<HTMLDivElement>(null)
     const scheduleRef = useRef<HTMLDivElement>(null)
+    const carpoolRef = useRef<HTMLDivElement>(null)
 
     return (
         <div
@@ -59,6 +62,10 @@ const Page: FunctionComponent = () => {
                     {
                         ref: scheduleRef,
                         icon: <CalendarMonth style={{width: "30px", height: "30px", color: "white"}}/>
+                    },
+                    {
+                        ref: carpoolRef,
+                        icon: <DirectionsCar style={{width: "30px", height: "30px", color: "white"}}/>
                     }
                 ]} />
             </div>
@@ -103,13 +110,13 @@ const Page: FunctionComponent = () => {
             <ContentBlock>
                 <div className="flex flex-col justify-center items-center">
                     <p className="max-w-4xl text-center text-xl font-semibold">
-                        Het schema is nog niet definitief!<br />
+                        De agenda is nog niet definitief!<br />
                         Voel je vrij om aanpassingen te verzoeken bij de organisatie.
                     </p>
                 </div>
             </ContentBlock>
             <div ref={scheduleRef} className="flex flex-wrap row-gap-16 justify-center z-10 text-white font-semibold w-full">
-                <DayPlanningPanelWrapper>
+                <AftreckiPanelWrapper>
                     {AGENDA.map((dayWithActivities) => (
                         <DayPlanningPanel
                             key={dayWithActivities.title}
@@ -117,7 +124,29 @@ const Page: FunctionComponent = () => {
                             activities={dayWithActivities.events}
                         />
                     ))}
-                </DayPlanningPanelWrapper>
+                </AftreckiPanelWrapper>
+            </div>
+            <div className="flex h-25"/>
+            <ContentBlock>
+                <div className="flex flex-col justify-center items-center">
+                    <p className="max-w-4xl text-center text-xl font-semibold">
+                        Carpoolschema
+                    </p>
+                </div>
+            </ContentBlock>
+            <div ref={carpoolRef} className="flex flex-wrap row-gap-16 justify-center z-10 text-white font-semibold w-full">
+                <AftreckiPanelWrapper>
+                    {carpoolData.map((car) => (
+                        <AftreckiPanel key={car.carName} title={<div className="flex flex-col items-center">
+                            <div>{car.owner + "'s"}</div>
+                            <div>{car.carName.toUpperCase()}</div>
+                        </div>}>
+                            {car.passengers.map(passenger => <div key={passenger}>
+                                {passenger}
+                            </div>)}
+                        </AftreckiPanel>
+                    ))}
+                </AftreckiPanelWrapper>
             </div>
             <div className="flex h-25"/>
         </div>
