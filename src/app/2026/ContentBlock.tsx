@@ -1,0 +1,41 @@
+import {FunctionComponent, PropsWithChildren} from "react";
+
+type Props = {
+    className?: string;
+    background?: boolean;
+    title?: string;
+    inverseRotate?: boolean;
+};
+
+export const ContentBlock: FunctionComponent<PropsWithChildren<Props>> = ({
+                                                                              children,
+                                                                              className,
+                                                                              background = true,
+                                                                              inverseRotate = false,
+                                                                              title,
+                                                                          }) => {
+    return (
+        <>
+            <div
+                className={`w-[105vw] z-10 text-gray-200 font-600 p-12 font-(family-name:--my-font) ${
+                    background ? "bg-bermuda" : ""
+                } ${className ?? ""}`}
+                style={{
+                    rotate: `calc(3deg * ${inverseRotate ? "-1" : "1"})`,
+                    boxShadow: background ? "rgb(40, 40, 40) 0px 0px 20px" : "none"
+            }}
+            >
+                <div style={{rotate: `calc(3deg * ${inverseRotate ? "1" : "-1"})`}}>
+                    {title && (
+                        <div className="flex text-2xl font-bold justify-center">
+                            {title.toUpperCase()}
+                        </div>
+                    )}
+
+                    {children}
+                </div>
+            </div>
+            <div className="h-12 w-screen z-10"/>
+        </>
+    );
+};

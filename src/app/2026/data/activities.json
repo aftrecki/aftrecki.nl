@@ -1,0 +1,163 @@
+[
+  {
+    "name": "Friet en pils",
+    "mapsLink": "https://maps.app.goo.gl/VKbbrD48bJLXXDDq6",
+    "minsDriving": 3,
+    "types": [
+      "Culinair"
+    ]
+  },
+  {
+    "name": "Animalaine (soort kinderboerderij)",
+    "mapsLink": "https://maps.app.goo.gl/8wHd29vReiFqkj2S8",
+    "minsDriving": 8,
+    "types": [
+      "Natuur"
+    ]
+  },
+  {
+    "name": "Bizonboerderij in Recogne",
+    "mapsLink": "https://maps.app.goo.gl/wtyQDY2Rg8pzuy5g6",
+    "minsDriving": 10,
+    "types": [
+      "Natuur"
+    ]
+  },
+  {
+    "name": "Bastogne War Museum",
+    "mapsLink": "https://maps.app.goo.gl/JyZRxkKKjkTCZPyo8",
+    "minsDriving": 15,
+    "types": [
+      "Museum"
+    ]
+  },
+  {
+    "name": "Roche-En-Ardenne (cutesie dorpje? met oude kastelen en shit)",
+    "mapsLink": "https://maps.app.goo.gl/nHecBuZNg9ghWuYZ6",
+    "minsDriving": 15,
+    "types": [
+      "Dorp"
+    ]
+  },
+  {
+    "name": "Le Herou",
+    "mapsLink": "https://maps.app.goo.gl/UDefE8FzEkpBSCd48",
+    "minsDriving": 20,
+    "types": [
+      "Natuur"
+    ]
+  },
+  {
+    "name": "Outdoor-verhuur (kayak, paintball etc. Vast ook andere verhuurs in de buurt)",
+    "mapsLink": "https://maps.app.goo.gl/tAi7a7WKropTUwc46",
+    "minsDriving": 20,
+    "types": [
+      "Natuur"
+    ]
+  },
+  {
+    "name": "Bioviskwekerij in Freux",
+    "mapsLink": "https://maps.app.goo.gl/d3yVRYMwLQFY21Ux9",
+    "minsDriving": 20,
+    "types": [
+      "Cultureel"
+    ]
+  },
+  {
+    "name": "Kanoën bij 't La Rouche outdoor centre",
+    "mapsLink": "https://maps.app.goo.gl/oZWYVSLer4X3WfMP6",
+    "minsDriving": 25,
+    "types": [
+      "Natuur"
+    ]
+  },
+  {
+    "name": "Brouwerij Lupulus",
+    "mapsLink": "https://maps.app.goo.gl/7RH4kS2rQU9cmMNC8",
+    "minsDriving": 30,
+    "types": [
+      "Bier"
+    ]
+  },
+  {
+    "name": "Ijzer- en ruraal-wonen-musea",
+    "mapsLink": "https://maps.app.goo.gl/h6SXFyB558pP41CdA",
+    "minsDriving": 33,
+    "types": [
+      "Museum"
+    ]
+  },
+  {
+    "name": "Grotten van Hotton",
+    "mapsLink": "https://www.google.com/maps/place/Grottes+de+Hotton/data=!4m2!3m1!19sChIJQZKfqapJwEcRFcl4h_sHs6Q",
+    "minsDriving": 36,
+    "types": [
+      "Natuur"
+    ]
+  },
+  {
+    "name": "Grotten van Han",
+    "mapsLink": "https://maps.app.goo.gl/fTgesLbHcqFyEsNf9",
+    "minsDriving": 44,
+    "types": [
+      "Natuur"
+    ]
+  },
+  {
+    "name": "Abdij van Orval",
+    "mapsLink": "https://maps.app.goo.gl/2GfF6xSm2GUmdZHD9",
+    "minsDriving": 45,
+    "types": [
+      "Bier"
+    ]
+  },
+  {
+    "name": "Bouillon",
+    "mapsLink": "https://www.google.com/maps/place/Bouillon/data=!4m2!3m1!19sChIJ65Y9cLp76kcRJkQrIlNmnvs",
+    "minsDriving": 51,
+    "types": [
+      "Dorp"
+    ]
+  },
+  {
+    "name": "(onzeker over tijd) Beauraing Middeleeuws Festival",
+    "mapsLink": "https://maps.app.goo.gl/XJ4DQBcxZE5j4YLz8",
+    "minsDriving": 55,
+    "types": [
+      "Dorp",
+      "Cultureel"
+    ]
+  },
+  {
+    "name": "Jardin des Hiboux (roofvogels)",
+    "mapsLink": "https://maps.app.goo.gl/7ErKKYnYaxfzuSVR8",
+    "minsDriving": 56,
+    "types": [
+      "Natuur"
+    ]
+  },
+  {
+    "name": "--> Leffe brouwerij",
+    "mapsLink": "https://maps.app.goo.gl/nWbC99Wz1t4HcDWBA",
+    "minsDriving": 60,
+    "types": [
+      "Bier"
+    ]
+  },
+  {
+    "name": "Luxembourg city",
+    "mapsLink": "https://maps.app.goo.gl/1ZRdFeD8EXxxoZeZ9",
+    "minsDriving": 60,
+    "types": [
+      "Cultureel"
+    ]
+  },
+  {
+    "name": "Vianden Kasteel",
+    "mapsLink": "https://maps.app.goo.gl/hsfoLfdrttmvUsi58",
+    "minsDriving": 60,
+    "types": [
+      "Cultureel"
+    ]
+  }
+]

@@ -1,6 +1,6 @@
 import {FunctionComponent} from "react";
-import {DayActivity} from "@/app/2025/data/agenda";
-import {AftreckiPanel} from "@/app/2025/AftreckiPanel";
+import {DayActivity} from "@/app/2026/data/agenda";
+import {AftreckiPanel} from "@/app/2026/AftreckiPanel";
 
 type Props = {
   dateTitle: string;

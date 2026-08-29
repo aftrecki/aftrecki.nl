@@ -1,6 +1,6 @@
 "use client";
 
-import Page from "@/app/2025/page";
+import Page from "@/app/2026/page";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <head>
         <link rel="icon" href="/2025/forest.svg" />
-        <title>Aftrecki</title>
+        <title>Aftrecki 2026</title>
       </head>
       <Page></Page>
     </>
