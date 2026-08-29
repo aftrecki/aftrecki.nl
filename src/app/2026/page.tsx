@@ -47,12 +47,14 @@ const Page: FunctionComponent = () => {
         href="https://fonts.googleapis.com/css2?family=Red+Hat+Display"
       />
       <div ref={topRef} className="h-0 w-0" />
-      <Image
-        src={"/2026/vosgesAdjusted.jpg"}
-        alt="HetHuis"
-        fill
-        objectFit={"cover"}
-      />
+      <div style={{ position: "relative", height: "100vh" }}>
+        <Image
+          src={"/2026/vosgesAdjusted.jpg"}
+          alt="HetHuis"
+          fill
+          style={{ objectFit: "cover" }}
+        />
+      </div>
 
       <div className="z-15 flex justify-center absolute top-4 right-4">
         <MenuLogo

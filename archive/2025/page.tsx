@@ -48,12 +48,14 @@ const Page: FunctionComponent = () => {
       />
       <div ref={topRef} className="h-0 w-0" />
       <Splash />
-      <Image
-        src={"/2025/vosgesAdjusted.jpg"}
-        alt="HetHuis"
-        fill
-        objectFit={"cover"}
-      />
+      <div style={{ position: "relative", height: "100vh" }}>
+        <Image
+          src={"/2025/vosgesAdjusted.jpg"}
+          alt="HetHuis"
+          fill
+          style={{ objectFit: "cover" }}
+        />
+      </div>
       <div className="z-15 flex justify-center absolute top-4 right-4">
         <MenuLogo
           data={[

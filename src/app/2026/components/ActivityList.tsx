@@ -13,8 +13,8 @@ export const ActivityList: React.FC<ActivityListProps> = ({ activities }) => {
           Geen activiteiten gevonden voor deze selectie.
         </div>
       ) : (
-        activities.map((activity) => (
-          <ActivityCard key={activity.name} activity={activity} />
+        activities.map((activity, index) => (
+          <ActivityCard key={`${activity.name}-${index}`} activity={activity} />
         ))
       )}
     </div>

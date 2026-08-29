@@ -49,7 +49,8 @@ export const MenuLogo: FunctionComponent<Props> = ({data, style = {}}) => {
                 onClick={() => {
                     setMenuOpen(!menuOpen)
                 }}
-                objectFit={"cover"}/>
+                style={{ objectFit: "cover" }}
+                loading="eager" />
         </Tooltip>
         {
             data.map((element, index) => {
