@@ -2,7 +2,7 @@
 
 import { FunctionComponent, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import { NewActivityForm } from "./ActivitiesSection";
+import { NewActivityForm } from "./components/NewActivityForm";
 
 interface ActivityModalProps {
   isOpen: boolean;
