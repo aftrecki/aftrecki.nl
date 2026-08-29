@@ -188,7 +188,10 @@ export default function ActivitiesSection() {
         Nieuwe activiteit gevonden? Stel hem voor!
       </button>
 
-      <ActivityModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <ActivityModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 }
