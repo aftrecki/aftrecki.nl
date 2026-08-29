@@ -131,9 +131,22 @@ const Page: FunctionComponent = () => {
           </p>
         </div>
       </ContentBlock>
+
+      <div className="flex h-25" />
       <ContentBlock>
         <div className="flex flex-col justify-center items-center">
           <p className="max-w-4xl text-center text-xl font-semibold rotate-3">
+            Activiteiten
+          </p>
+        </div>
+      </ContentBlock>
+      <div className="flex flex-wrap row-gap-16 justify-center z-10 w-full">
+        <ActivitiesSection />
+      </div>
+      <div className="flex h-25" />
+      <ContentBlock inverseRotate>
+        <div className="flex flex-col justify-center items-center">
+          <p className="max-w-4xl text-center text-xl font-semibold -rotate-3">
             Agenda
           </p>
         </div>
@@ -151,17 +164,6 @@ const Page: FunctionComponent = () => {
             />
           ))}
         </AftreckiPanelWrapper>
-      </div>
-      <div className="flex h-25" />
-      <ContentBlock inverseRotate>
-        <div className="flex flex-col justify-center items-center">
-          <p className="max-w-4xl text-center text-xl font-semibold -rotate-3">
-            Activiteiten
-          </p>
-        </div>
-      </ContentBlock>
-      <div className="flex flex-wrap row-gap-16 justify-center z-10 w-full">
-        <ActivitiesSection />
       </div>
       <div className="flex h-25" />
       <ContentBlock>

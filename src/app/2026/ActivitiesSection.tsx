@@ -3,6 +3,7 @@
 import { useState } from "react";
 import activities from "@/app/2026/data/activities.json";
 import { Map, DirectionsCar, FilterList } from "@mui/icons-material";
+import { ActivityModal } from "./ActivityModal";
 
 const ALL_TYPES = ["Culinair", "Natuur", "Museum", "Dorp", "Cultureel", "Bier"];
 
@@ -68,8 +69,24 @@ function renderType(type: string) {
   }
 }
 
+export function NewActivityForm() {
+  return (
+    <div className="w-full h-full">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSe1EMc-qk3aKaWFCmiDpGA_Khb-n9HqWLM9RJBmqS7mcC6Arg/viewform?embedded=true"
+        className="w-full h-full"
+        style={{ width: "100%", height: "100%", minHeight: "80vh" }}
+        title="Nieuwe activiteit voorstellen"
+      >
+        Laden…
+      </iframe>
+    </div>
+  );
+}
+
 export default function ActivitiesSection() {
   const [selectedType, setSelectedType] = useState<string | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Filter activities based on the selected type
   const filteredActivities = selectedType
@@ -119,7 +136,6 @@ export default function ActivitiesSection() {
           })}
         </div>
       </div>
-
       {/* Activities List */}
       <div className="flex flex-col gap-3 max-h-[32rem] overflow-y-auto pr-2 pb-2">
         {filteredActivities.length === 0 ? (
@@ -164,6 +180,15 @@ export default function ActivitiesSection() {
           ))
         )}
       </div>
+
+      <button
+        onClick={() => setIsModalOpen(true)}
+        className="font-semibold text-1xl text-center cursor-pointer bg-white/80 py-4 rounded-xl hover:bg-white transition-all"
+      >
+        Nieuwe activiteit gevonden? Stel hem voor!
+      </button>
+
+      <ActivityModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 }
