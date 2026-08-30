@@ -31,7 +31,7 @@ const Page: FunctionComponent = () => {
 
   return (
     <div
-      className="grid justify-center h-screen overflow-scroll"
+      className="grid justify-center min-h-screen"
       style={{ scrollbarWidth: "none", overflowX: "hidden" }}
     >
       <link
@@ -47,61 +47,66 @@ const Page: FunctionComponent = () => {
         href="https://fonts.googleapis.com/css2?family=Red+Hat+Display"
       />
       <div ref={topRef} className="h-0 w-0" />
-      <div style={{ position: "relative", height: "100vh" }}>
-        <Image
-          src={"/2026/vosgesAdjusted.jpg"}
-          alt="HetHuis"
-          fill
-          style={{ objectFit: "cover" }}
-        />
-      </div>
-
-      <div className="z-15 flex justify-center absolute top-4 right-4">
-        <MenuLogo
-          data={[
-            {
-              ref: topRef,
-              icon: (
-                <AccessTime
-                  style={{ width: "30px", height: "30px", color: "white" }}
-                />
-              ),
-            },
-            {
-              ref: locationRef,
-              icon: (
-                <Hotel
-                  style={{ width: "30px", height: "30px", color: "white" }}
-                />
-              ),
-            },
-            {
-              ref: scheduleRef,
-              icon: (
-                <CalendarMonth
-                  style={{ width: "30px", height: "30px", color: "white" }}
-                />
-              ),
-            },
-            {
-              ref: carpoolRef,
-              icon: (
-                <DirectionsCar
-                  style={{ width: "30px", height: "30px", color: "white" }}
-                />
-              ),
-            },
-          ]}
-        />
-      </div>
-
-      <div className="flex flex-col justify-center z-10 h-screen font-bold">
-        <div className="flex items-center justify-center font-(family-name:--my-font-header) text-5xl text-white uppercase mb-4">
-          <strong>l'Ardennes - Bastronk 💪 - Salle 🐀👑</strong>
+      <div className="relative w-full min-h-screen">
+        <div className="fixed inset-0 -z-10">
+          <Image
+            src={"/2026/vosgesAdjusted.jpg"}
+            alt="HetHuis"
+            fill
+            style={{ objectFit: "cover" }}
+          />
         </div>
 
-        <CountDownTimer timeToCountdown={timeToCountdown} />
+        <div className="relative z-10 min-h-screen">
+          <div className="z-25 flex justify-center fixed top-4 right-4">
+            <MenuLogo
+              data={[
+                {
+                  ref: topRef,
+                  icon: (
+                    <AccessTime
+                      style={{ width: "30px", height: "30px", color: "white" }}
+                    />
+                  ),
+                },
+                {
+                  ref: locationRef,
+                  icon: (
+                    <Hotel
+                      style={{ width: "30px", height: "30px", color: "white" }}
+                    />
+                  ),
+                },
+                {
+                  ref: scheduleRef,
+                  icon: (
+                    <CalendarMonth
+                      style={{ width: "30px", height: "30px", color: "white" }}
+                    />
+                  ),
+                },
+                {
+                  ref: carpoolRef,
+                  icon: (
+                    <DirectionsCar
+                      style={{ width: "30px", height: "30px", color: "white" }}
+                    />
+                  ),
+                },
+              ]}
+            />
+          </div>
+
+          <div className="flex flex-col justify-center h-screen font-bold">
+            <div className="flex items-center justify-center font-(family-name:--my-font-header) text-5xl text-white uppercase mb-4">
+              <strong>Bastogne</strong>
+            </div>
+
+            <CountDownTimer timeToCountdown={timeToCountdown} />
+          </div>
+        </div>
       </div>
+
       <ContentBlock>
         <div className="flex flex-col justify-center items-center">
           <p className="max-w-xl text-center">

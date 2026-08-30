@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AftreCKI 2025",
-  description: "Lekker naar de Vogezen met de AftreCKI 2025!",
+  title: "AftreCKI 2026",
+  description: "",
 };
 
 export default function RootLayout({
