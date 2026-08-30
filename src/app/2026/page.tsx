@@ -31,8 +31,8 @@ const Page: FunctionComponent = () => {
 
   return (
     <div
-      className="grid justify-center min-h-screen"
-      style={{ scrollbarWidth: "none", overflowX: "hidden" }}
+      className="grid justify-center min-h-screen bg-[url('/2026/vosgesAdjusted.jpg')] bg-cover bg-center bg-fixed overflow-x-hidden"
+      style={{ scrollbarWidth: "none" }}
     >
       <link
         rel="stylesheet"
@@ -48,7 +48,7 @@ const Page: FunctionComponent = () => {
       />
 
       {/* Achtergrond */}
-      <div className="fixed inset-0 -z-10 overflow-hidden">
+      {/* <div className="fixed inset-0 -z-10 overflow-hidden">
         <Image
           src={"/2026/vosgesAdjusted.jpg"}
           alt="vosgesAdjusted"
@@ -56,7 +56,7 @@ const Page: FunctionComponent = () => {
           priority
           className="object-cover"
         />
-      </div>
+      </div> */}
 
       <div className="relative z-10 min-h-screen">
         <div className="z-25 flex justify-center fixed top-4 right-4">
