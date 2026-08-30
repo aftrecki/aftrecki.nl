@@ -48,12 +48,13 @@ const Page: FunctionComponent = () => {
       />
 
       {/* Achtergrond */}
-      <div className="fixed inset-0 -z-10">
+      <div className="fixed inset-0 -z-10 overflow-hidden">
         <Image
           src={"/2026/vosgesAdjusted.jpg"}
-          alt="HetHuis"
+          alt="vosgesAdjusted"
           fill
-          style={{ objectFit: "cover" }}
+          priority
+          className="object-cover"
         />
       </div>
 
