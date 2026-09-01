@@ -53,15 +53,15 @@
       "Pim",
       "Lara",
       "Merel",
-      "Mark",
-      "Lex"
+      "Mark"
     ]
   },
   {
-    "carName": "Tweewieler",
+    "carName": "Burgermobiel",
     "owner": "Tariq",
     "passengers": [
-      "Tariq"
+      "Tariq",
+      "Lex"
     ]
   },
   {
