@@ -9,7 +9,7 @@ export type DayActivity = {
 
 export const AGENDA: { title: string; events: DayActivity[] }[] = [
   {
-    title: "4 oktober",
+    title: "4 september",
     events: [
       {
         timeTitle: "",
@@ -24,7 +24,7 @@ export const AGENDA: { title: string; events: DayActivity[] }[] = [
     ],
   },
   {
-    title: "11 oktober",
+    title: "11 september",
     events: [
       {
         timeTitle: "Vertrek",
